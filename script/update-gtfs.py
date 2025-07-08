@@ -1,0 +1,1 @@
+(Contenu du script Python déjà validé par l'utilisateur)
