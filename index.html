@@ -1,13 +1,58 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard RATP Vincennes</title>
+  <title>Dashboard Transports - Hippodrome de Vincennes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Bienvenue sur le Dashboard RATP Vincennes</h1>
+  <header>
+    <div class="header-left">
+      <img src="img/logo-vincennes.png" alt="Logo Vincennes">
+      <h1>Dashboard Transports</h1>
+    </div>
+    <div class="header-right">
+      <span id="horloge">--:--</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="bloc" id="rer-a">
+      <h2>🚆 RER A – Joinville-le-Pont</h2>
+      <div class="depart-list" id="rer-a-departs">Chargement…</div>
+    </section>
+
+    <section class="bloc" id="bus-77">
+      <h2>🚌 Bus 77 – Hippodrome / École du Breuil</h2>
+      <div class="depart-list" id="bus-77-departs">Chargement…</div>
+    </section>
+
+    <section class="bloc" id="bus-201">
+      <h2>🚌 Bus 201 – École du Breuil</h2>
+      <div class="depart-list" id="bus-201-departs">Chargement…</div>
+    </section>
+
+    <section class="bloc" id="velib">
+      <h2>🚲 Vélib’ disponibles</h2>
+      <div class="velib-list" id="velib-info">Chargement…</div>
+    </section>
+
+    <section class="bloc" id="meteo">
+      <h2>🌤 Météo</h2>
+      <div class="meteo-info" id="meteo-info">Chargement…</div>
+    </section>
+
+    <section class="bloc" id="trafic">
+      <h2>🚗 Trafic A86 / Périphérique</h2>
+      <div class="trafic-info" id="trafic-info">Chargement…</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Hippodrome de Vincennes – Données RATP, IDFM, Météo & OpenData</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
