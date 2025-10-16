@@ -1,7 +1,7 @@
 {
   "Hippodrome de Vincennes": {
     "77": {
-      "2025-10-15": [
+      "2025-10-16": [
         {
           "time": "05:20",
           "destination": "Gare de Lyon",
@@ -444,36 +444,14 @@
         },
         {
           "time": "09:46",
-          "destination": "Gare de Lyon",
+          "destination": "Joinville-le-Pont RER",
           "remaining_stops": [
-            "Gravelle - Reuilly",
-            "Gravelle - Liberté",
-            "Gravelle - Jaurès",
-            "Nicolaï",
-            "Vacassy - Santé publique",
-            "Plateau de Gravelle",
-            "Route de la Terrasse",
-            "Hôpitaux de Saint-Maurice",
-            "Porte de Charenton",
-            "Wattignies - Gravelle",
-            "Porte de Reuilly",
-            "Gare de Bercy",
-            "Charenton- Wattignies",
-            "Ministère de l'Economie et des Finances / Gare de Lyon",
-            "Dugommier",
-            "Gare de Lyon"
+            "Ecole du Breuil",
+            "Joinville-le-Pont RER"
           ]
         },
         {
           "time": "09:46",
-          "destination": "Joinville-le-Pont RER",
-          "remaining_stops": [
-            "Ecole du Breuil",
-            "Joinville-le-Pont RER"
-          ]
-        },
-        {
-          "time": "10:03",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Gravelle - Reuilly",
@@ -503,7 +481,7 @@
           ]
         },
         {
-          "time": "10:20",
+          "time": "10:03",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Gravelle - Reuilly",
@@ -530,6 +508,28 @@
           "remaining_stops": [
             "Ecole du Breuil",
             "Joinville-le-Pont RER"
+          ]
+        },
+        {
+          "time": "10:20",
+          "destination": "Gare de Lyon",
+          "remaining_stops": [
+            "Gravelle - Reuilly",
+            "Gravelle - Liberté",
+            "Gravelle - Jaurès",
+            "Nicolaï",
+            "Vacassy - Santé publique",
+            "Plateau de Gravelle",
+            "Route de la Terrasse",
+            "Hôpitaux de Saint-Maurice",
+            "Porte de Charenton",
+            "Wattignies - Gravelle",
+            "Porte de Reuilly",
+            "Gare de Bercy",
+            "Charenton- Wattignies",
+            "Ministère de l'Economie et des Finances / Gare de Lyon",
+            "Dugommier",
+            "Gare de Lyon"
           ]
         },
         {
@@ -1502,14 +1502,6 @@
         },
         {
           "time": "20:15",
-          "destination": "Joinville-le-Pont RER",
-          "remaining_stops": [
-            "Ecole du Breuil",
-            "Joinville-le-Pont RER"
-          ]
-        },
-        {
-          "time": "20:15",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Gravelle - Reuilly",
@@ -1528,6 +1520,14 @@
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
             "Gare de Lyon"
+          ]
+        },
+        {
+          "time": "20:15",
+          "destination": "Joinville-le-Pont RER",
+          "remaining_stops": [
+            "Ecole du Breuil",
+            "Joinville-le-Pont RER"
           ]
         },
         {
@@ -1897,10 +1897,10 @@
   },
   "École du Breuil": {
     "201": {
-      "2025-10-15": []
+      "2025-10-16": []
     },
     "77": {
-      "2025-10-15": [
+      "2025-10-16": [
         {
           "time": "05:18",
           "destination": "Gare de Lyon",
@@ -2103,14 +2103,6 @@
         },
         {
           "time": "07:33",
-          "destination": "Joinville-le-Pont RER",
-          "remaining_stops": [
-            "Ecole du Breuil",
-            "Joinville-le-Pont RER"
-          ]
-        },
-        {
-          "time": "07:33",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Gravelle - Reuilly",
@@ -2129,6 +2121,14 @@
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
             "Gare de Lyon"
+          ]
+        },
+        {
+          "time": "07:33",
+          "destination": "Joinville-le-Pont RER",
+          "remaining_stops": [
+            "Ecole du Breuil",
+            "Joinville-le-Pont RER"
           ]
         },
         {
@@ -2553,6 +2553,14 @@
         },
         {
           "time": "11:48",
+          "destination": "Joinville-le-Pont RER",
+          "remaining_stops": [
+            "Ecole du Breuil",
+            "Joinville-le-Pont RER"
+          ]
+        },
+        {
+          "time": "11:48",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Gravelle - Reuilly",
@@ -2571,14 +2579,6 @@
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
             "Gare de Lyon"
-          ]
-        },
-        {
-          "time": "11:48",
-          "destination": "Joinville-le-Pont RER",
-          "remaining_stops": [
-            "Ecole du Breuil",
-            "Joinville-le-Pont RER"
           ]
         },
         {
@@ -3003,36 +3003,28 @@
         },
         {
           "time": "16:12",
-          "destination": "Joinville-le-Pont RER",
+          "destination": "Gare de Lyon",
           "remaining_stops": [
-            "Ecole du Breuil",
-            "Joinville-le-Pont RER"
+            "Gravelle - Reuilly",
+            "Gravelle - Liberté",
+            "Gravelle - Jaurès",
+            "Nicolaï",
+            "Vacassy - Santé publique",
+            "Plateau de Gravelle",
+            "Route de la Terrasse",
+            "Hôpitaux de Saint-Maurice",
+            "Porte de Charenton",
+            "Wattignies - Gravelle",
+            "Porte de Reuilly",
+            "Gare de Bercy",
+            "Charenton- Wattignies",
+            "Ministère de l'Economie et des Finances / Gare de Lyon",
+            "Dugommier",
+            "Gare de Lyon"
           ]
         },
         {
           "time": "16:12",
-          "destination": "Gare de Lyon",
-          "remaining_stops": [
-            "Gravelle - Reuilly",
-            "Gravelle - Liberté",
-            "Gravelle - Jaurès",
-            "Nicolaï",
-            "Vacassy - Santé publique",
-            "Plateau de Gravelle",
-            "Route de la Terrasse",
-            "Hôpitaux de Saint-Maurice",
-            "Porte de Charenton",
-            "Wattignies - Gravelle",
-            "Porte de Reuilly",
-            "Gare de Bercy",
-            "Charenton- Wattignies",
-            "Ministère de l'Economie et des Finances / Gare de Lyon",
-            "Dugommier",
-            "Gare de Lyon"
-          ]
-        },
-        {
-          "time": "16:29",
           "destination": "Joinville-le-Pont RER",
           "remaining_stops": [
             "Ecole du Breuil",
@@ -3059,6 +3051,14 @@
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
             "Gare de Lyon"
+          ]
+        },
+        {
+          "time": "16:29",
+          "destination": "Joinville-le-Pont RER",
+          "remaining_stops": [
+            "Ecole du Breuil",
+            "Joinville-le-Pont RER"
           ]
         },
         {
@@ -3183,14 +3183,6 @@
         },
         {
           "time": "17:56",
-          "destination": "Joinville-le-Pont RER",
-          "remaining_stops": [
-            "Ecole du Breuil",
-            "Joinville-le-Pont RER"
-          ]
-        },
-        {
-          "time": "17:56",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Gravelle - Reuilly",
@@ -3209,6 +3201,14 @@
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
             "Gare de Lyon"
+          ]
+        },
+        {
+          "time": "17:56",
+          "destination": "Joinville-le-Pont RER",
+          "remaining_stops": [
+            "Ecole du Breuil",
+            "Joinville-le-Pont RER"
           ]
         },
         {
@@ -3796,7 +3796,7 @@
   },
   "Joinville-le-Pont": {
     "RER A": {
-      "2025-10-15": []
+      "2025-10-16": []
     }
   }
 }
