@@ -19,11 +19,9 @@
     </div>
   </header>
 
-  <!-- Top status bars -->
   <div id="top-alert" class="top-status" style="display:none"></div>
   <div id="top-news" class="top-news" style="display:none"></div>
 
-  <!-- Upper 3 cards -->
   <section class="grid-3">
     <div class="card-dark" id="card-rer">
       <div class="card-head"><span class="pill">A</span><div class="dir">RER A – Joinville-le-Pont</div></div>
@@ -42,13 +40,11 @@
     </div>
   </section>
 
-  <!-- All buses at Joinville -->
   <section class="tile-wrap">
     <div class="tile-headline" style="margin:10px 15px;color:#223;opacity:.7">Arrêt Joinville‑le‑Pont — Tous bus</div>
     <div class="all-bus" id="joinville-all-bus"></div>
   </section>
 
-  <!-- Lower band: Velib / Courses / Sytadin placeholder (road-list) -->
   <section class="lower-grid">
     <div class="bloc" id="velib">
       <div class="bloc-header"><h2>🚲 Vélib’ disponibles</h2></div>
@@ -79,17 +75,6 @@
   <script src="patches/courses-pmu-fallback.js"></script>
   <script src="patches/line-pill-colors.js"></script>
   <script src="patches/line-pill-extended-ui.js"></script>
-  <script>
-  // Rendering helpers to fill minutes rows and tiles
-  function makeMinuteCol(min, at, imm){
-    const wrap = document.createElement('div');
-    wrap.className='minute-col';
-    const m = document.createElement('div'); m.className='m'; m.textContent=min; wrap.appendChild(m);
-    const atEl = document.createElement('div'); atEl.className='at'; atEl.textContent=at; wrap.appendChild(atEl);
-    if (imm){ const b=document.createElement('div'); b.className='badge-imm'; b.textContent='IMMINENT'; wrap.appendChild(b); }
-    return wrap;
-  }
-  function insertSplit(parent){ const s=document.createElement('div'); s.className='split'; parent.appendChild(s); }
-  </script>
+  <script src="patches/render-idfm-layout.js"></script>
 </body>
 </html>
