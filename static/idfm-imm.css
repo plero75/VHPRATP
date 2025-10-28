@@ -1,0 +1,4 @@
+/* Blinking IMMINENT and replace 0 by IMMINENT text */
+@keyframes blinkImm { 0%{opacity:1} 50%{opacity:.25} 100%{opacity:1} }
+.minute-col.imm .m{ display:none; }
+.minute-col.imm .imm-text{ display:inline-block; background:#6b3f26; color:#ffdead; border-radius:16px; padding:6px 12px; font-weight:900; animation: blinkImm 1s infinite; }
