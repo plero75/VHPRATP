@@ -9,7 +9,7 @@
 <body>
   <header>
     <div class="header-left">
-      <img src="img/logo-vincennes.png" alt="Logo Vincennes">
+      <img src="img/logo-vincennes.png" alt="Logo Vincennes" class="logo">
       <h1>Dashboard Transports</h1>
     </div>
     <div class="header-right">
@@ -17,40 +17,89 @@
     </div>
   </header>
 
-  <main>
-    <section class="bloc" id="rer-a">
-      <h2>🚆 RER A – Joinville-le-Pont</h2>
-      <div class="depart-list" id="rer-a-departs">Chargement…</div>
+  <main class="dashboard-grid">
+    <!-- RER A Joinville-le-Pont -->
+    <section class="bloc transport-bloc" id="rer-a">
+      <div class="bloc-header">
+        <h2>🚆 RER A – Joinville-le-Pont</h2>
+        <div class="alert-banner" id="rer-a-alert" style="display: none;"></div>
+      </div>
+      <div class="depart-list" id="rer-a-departs">
+        <div class="loading">Chargement des horaires...</div>
+      </div>
+      <div class="served-stops" id="rer-a-stops" style="display: none;"></div>
     </section>
 
-    <section class="bloc" id="bus-77">
-      <h2>🚌 Bus 77 – Hippodrome / École du Breuil</h2>
-      <div class="depart-list" id="bus-77-departs">Chargement…</div>
+    <!-- Bus 77 Hippodrome -->
+    <section class="bloc transport-bloc" id="bus-77">
+      <div class="bloc-header">
+        <h2>🚌 Bus 77 – Hippodrome de Vincennes</h2>
+        <div class="alert-banner" id="bus-77-alert" style="display: none;"></div>
+      </div>
+      <div class="depart-list" id="bus-77-departs">
+        <div class="loading">Chargement des horaires...</div>
+      </div>
+      <div class="served-stops" id="bus-77-stops" style="display: none;"></div>
     </section>
 
-    <section class="bloc" id="bus-201">
-      <h2>🚌 Bus 201 – École du Breuil</h2>
-      <div class="depart-list" id="bus-201-departs">Chargement…</div>
+    <!-- Bus 201 École du Breuil -->
+    <section class="bloc transport-bloc" id="bus-201">
+      <div class="bloc-header">
+        <h2>🚌 Bus 201 – École du Breuil</h2>
+        <div class="alert-banner" id="bus-201-alert" style="display: none;"></div>
+      </div>
+      <div class="depart-list" id="bus-201-departs">
+        <div class="loading">Chargement des horaires...</div>
+      </div>
+      <div class="served-stops" id="bus-201-stops" style="display: none;"></div>
     </section>
 
+    <!-- Vélib' -->
     <section class="bloc" id="velib">
-      <h2>🚲 Vélib’ disponibles</h2>
-      <div class="velib-list" id="velib-info">Chargement…</div>
+      <div class="bloc-header">
+        <h2>🚲 Vélib' disponibles</h2>
+      </div>
+      <div class="velib-list" id="velib-info">
+        <div class="loading">Chargement des stations...</div>
+      </div>
     </section>
 
+    <!-- Météo -->
     <section class="bloc" id="meteo">
-      <h2>🌤 Météo</h2>
-      <div class="meteo-info" id="meteo-info">Chargement…</div>
+      <div class="bloc-header">
+        <h2>🌤 Météo Vincennes</h2>
+      </div>
+      <div class="meteo-info" id="meteo-info">
+        <div class="loading">Chargement météo...</div>
+      </div>
     </section>
 
-    <section class="bloc" id="trafic">
-      <h2>🚗 Trafic A86 / Périphérique</h2>
-      <div class="trafic-info" id="trafic-info">Chargement…</div>
+    <!-- Actualités France Info -->
+    <section class="bloc" id="actualites">
+      <div class="bloc-header">
+        <h2>📰 Actualités France Info</h2>
+      </div>
+      <div class="news-ticker" id="news-info">
+        <div class="loading">Chargement des actualités...</div>
+      </div>
+    </section>
+
+    <!-- Courses Hippiques PMU -->
+    <section class="bloc" id="courses">
+      <div class="bloc-header">
+        <h2>🏇 Courses Hippiques - Vincennes</h2>
+      </div>
+      <div class="courses-info" id="courses-info">
+        <div class="loading">Chargement des courses...</div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© Hippodrome de Vincennes – Données RATP, IDFM, Météo & OpenData</p>
+    <p>
+      © Hippodrome de Vincennes – 
+      Données: Île-de-France Mobilités, RATP, SNCF, Open-Meteo, Smovengo, PMU
+    </p>
   </footer>
 
   <script src="script.js"></script>
