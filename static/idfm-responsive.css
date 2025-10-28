@@ -1,0 +1,25 @@
+/* Responsive rules for portrait, tablet, and narrow widths */
+@media (max-width: 1280px){
+  .grid-3{ grid-template-columns: 1fr 1fr; }
+  .lower-grid{ grid-template-columns: 1fr; }
+}
+@media (max-width: 900px){
+  .grid-3{ grid-template-columns: 1fr; }
+  .all-bus{ grid-template-columns: repeat(2,1fr); }
+  .minutes-row{ gap: 12px; }
+  .minute-col .m{ font-size:24px; }
+  .minute-col .at{ font-size:14px; }
+}
+@media (max-width: 600px){
+  header{ flex-direction: column; align-items: flex-start; gap:8px; height:auto; }
+  .top-status,.top-news{ margin:8px; }
+  .grid-3{ padding:0 8px; gap:10px; }
+  .card-dark{ padding:10px 12px; }
+  .minutes-row{ gap:10px; }
+  .split{ height:40px; }
+  .all-bus{ margin:10px 8px; grid-template-columns: 1fr; }
+  .lower-grid{ margin:10px 8px; gap:10px; }
+}
+
+/* Prevent horizontal overflow */
+html,body{ max-width:100%; overflow-x:hidden; }
