@@ -1,0 +1,20 @@
+/* Direction header and bigger minute columns */
+.dir-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.dir-head .pill{background:#1570ef;color:#fff;border-radius:16px;padding:4px 12px;font-weight:800;font-size:18px}
+.dir-meta{font-size:12px;letter-spacing:1.6px;color:#9fb5cc;font-weight:800}
+.dir-title{font-size:28px;font-weight:800;color:var(--idfm-orange);line-height:1.1;margin-top:2px}
+
+.minutes-row{display:flex;align-items:flex-start;gap:26px}
+.minute-col{display:flex;flex-direction:column;align-items:center;min-width:90px}
+.minute-col .m{font-weight:900;font-size:42px;color:#fff;line-height:1}
+.minute-col .label{color:#8aa2bf;font-size:16px;margin-top:2px}
+.minute-col .at{font-family:"Courier New",monospace;color:#d8e6ff;font-size:22px;margin-top:6px}
+.badge-imm{background:#6b3f26;color:#ffdead;border-radius:16px;padding:6px 12px;font-weight:900;margin-top:8px}
+.split{width:10px;background:#ffffff;height:72px;opacity:.9;border-radius:2px}
+
+@media (max-width: 900px){
+  .minute-col{min-width:72px}
+  .minute-col .m{font-size:34px}
+  .minute-col .at{font-size:18px}
+  .split{height:60px}
+}
