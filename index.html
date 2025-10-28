@@ -5,6 +5,7 @@
   <title>Dashboard Transports - Hippodrome de Vincennes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="static/idfm.css">
 </head>
 <body>
   <header>
@@ -18,87 +19,55 @@
     </div>
   </header>
 
-  <main class="dashboard-grid">
-    <!-- RER A -->
-    <section class="bloc transport-bloc" id="rer-a">
-      <div class="bloc-header">
-        <h2>🚆 RER A – Joinville-le-Pont</h2>
-        <div class="alert-banner" id="rer-a-alert" style="display:none;"></div>
-      </div>
+  <!-- Top status bars -->
+  <div id="top-alert" class="top-status" style="display:none"></div>
+  <div id="top-news" class="top-news" style="display:none"></div>
+
+  <!-- Upper 3 cards -->
+  <section class="grid-3">
+    <div class="card-dark" id="card-rer">
+      <div class="card-head"><span class="pill">A</span><div class="dir">RER A – Joinville-le-Pont</div></div>
       <div id="rer-traffic" class="traffic-sub" style="display:none"></div>
-      <div class="depart-list" id="rer-body"><div class="loading">Chargement…</div></div>
-    </section>
+      <div class="minutes-row" id="rer-minutes"></div>
+    </div>
 
-    <!-- Bus Hippodrome (77) -->
-    <section class="bloc transport-bloc" id="bus-77">
-      <div class="bloc-header">
-        <h2>🚌 Bus 77 – Hippodrome de Vincennes</h2>
-        <div class="alert-banner" id="bus-77-alert" style="display:none;"></div>
-      </div>
-      <div id="bus-hippodrome-traffic" class="traffic-sub" style="display:none"></div>
-      <div class="depart-list" id="bus-hippodrome-body"><div class="loading">Chargement…</div></div>
-    </section>
+    <div class="card-dark" id="card-hippo-77">
+      <div class="card-head"><span class="pill" data-lineref="C02251">77</span><div class="dir">Hippodrome – Bus 77</div></div>
+      <div class="minutes-row" id="hippo-77-minutes"></div>
+    </div>
 
-    <!-- Bus Breuil (201) -->
-    <section class="bloc transport-bloc" id="bus-201">
-      <div class="bloc-header">
-        <h2>🚌 Bus 201 – École du Breuil</h2>
-        <div class="alert-banner" id="bus-201-alert" style="display:none;"></div>
-      </div>
-      <div id="bus-breuil-traffic" class="traffic-sub" style="display:none"></div>
-      <div class="depart-list" id="bus-breuil-body"><div class="loading">Chargement…</div></div>
-    </section>
+    <div class="card-dark" id="card-breuil-77201">
+      <div class="card-head"><span class="pill" data-lineref="C02251">77</span><span class="pill" data-lineref="C02251">201</span><div class="dir">École du Breuil – 77 & 201</div></div>
+      <div class="minutes-row" id="breuil-minutes"></div>
+    </div>
+  </section>
 
-    <!-- Trafic global -->
-    <section class="bloc" id="trafic">
-      <div class="bloc-header"><h2>🚦 Trafic Réseaux</h2></div>
-      <div id="traffic-banner" class="traffic-banner ok">Chargement…</div>
-      <div id="events-list" class="events-list"></div>
-    </section>
+  <!-- All buses at Joinville -->
+  <section class="tile-wrap">
+    <div class="tile-headline" style="margin:10px 15px;color:#223;opacity:.7">Arrêt Joinville‑le‑Pont — Tous bus</div>
+    <div class="all-bus" id="joinville-all-bus"></div>
+  </section>
 
-    <!-- Vélib -->
-    <section class="bloc" id="velib">
+  <!-- Lower band: Velib / Courses / Sytadin placeholder (road-list) -->
+  <section class="lower-grid">
+    <div class="bloc" id="velib">
       <div class="bloc-header"><h2>🚲 Vélib’ disponibles</h2></div>
       <div class="velib-list">
         <div><strong>Vincennes :</strong> <span id="velib-vincennes">—</span></div>
         <div><strong>Breuil :</strong> <span id="velib-breuil">—</span></div>
       </div>
-    </section>
+    </div>
 
-    <!-- Météo -->
-    <section class="bloc" id="meteo">
-      <div class="bloc-header"><h2>🌤 Météo Vincennes</h2></div>
-      <div class="meteo-info">
-        <span id="weather-emoji">⛅</span>
-        <span id="weather-temp">—°C</span>
-        <div id="weather-desc">Chargement…</div>
-      </div>
-    </section>
-
-    <!-- Actualités -->
-    <section class="bloc" id="actualites">
-      <div class="bloc-header"><h2>📰 Actualités France Info</h2></div>
-      <div id="news-carousel" class="news-carousel"><div class="loading">Chargement…</div></div>
-    </section>
-
-    <!-- Trafic routier -->
-    <section class="bloc" id="trafic-routier">
-      <div class="bloc-header"><h2>🛣️ Trafic routier proche</h2></div>
-      <div id="road-list" class="road-list"><div class="loading">Chargement…</div></div>
-    </section>
-
-    <!-- Courses -->
-    <section class="bloc" id="courses">
-      <div class="bloc-header"><h2>🏇 Courses Hippiques - Vincennes</h2></div>
+    <div class="bloc" id="courses">
+      <div class="bloc-header"><h2>🏇 Prochaines courses</h2></div>
       <div id="courses-list" class="courses-info"><div class="loading">Chargement…</div></div>
-    </section>
+    </div>
 
-    <!-- Ticker -->
-    <section class="bloc" id="ticker">
-      <div class="bloc-header"><h2>ℹ️ Infos</h2></div>
-      <div id="ticker-slot" class="ticker">Chargement…</div>
-    </section>
-  </main>
+    <div class="bloc" id="trafic-routier">
+      <div class="bloc-header"><h2>🛣️ Trafic routier (Sytadin)</h2></div>
+      <div id="road-list" class="road-list"><div class="loading">Chargement…</div></div>
+    </div>
+  </section>
 
   <footer>
     <p>© Hippodrome de Vincennes – Données: Île-de-France Mobilités, RATP, SNCF, Open‑Meteo, Opendata Paris, PMU</p>
@@ -110,5 +79,17 @@
   <script src="patches/courses-pmu-fallback.js"></script>
   <script src="patches/line-pill-colors.js"></script>
   <script src="patches/line-pill-extended-ui.js"></script>
+  <script>
+  // Rendering helpers to fill minutes rows and tiles
+  function makeMinuteCol(min, at, imm){
+    const wrap = document.createElement('div');
+    wrap.className='minute-col';
+    const m = document.createElement('div'); m.className='m'; m.textContent=min; wrap.appendChild(m);
+    const atEl = document.createElement('div'); atEl.className='at'; atEl.textContent=at; wrap.appendChild(atEl);
+    if (imm){ const b=document.createElement('div'); b.className='badge-imm'; b.textContent='IMMINENT'; wrap.appendChild(b); }
+    return wrap;
+  }
+  function insertSplit(parent){ const s=document.createElement('div'); s.className='split'; parent.appendChild(s); }
+  </script>
 </body>
 </html>
