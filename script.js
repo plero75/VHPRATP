@@ -115,37 +115,3 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchVelib();
   fetchTraffic();
 });
-
-
-/* 📁 style.css */
-
-body {
-  font-family: "Segoe UI", sans-serif;
-  background: #f4f6f9;
-  color: #222;
-  padding: 20px;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.data-block {
-  background: white;
-  margin-bottom: 30px;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-}
-
-.data-block h2 {
-  font-size: 1.4em;
-  margin-bottom: 10px;
-  color: #1b2494;
-}
-
-.line {
-  padding: 6px 0;
-  border-bottom: 1px solid #eee;
-}
