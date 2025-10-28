@@ -1,0 +1,44 @@
+/* Add compact IDFM-style cards and header bars */
+:root{
+  --idfm-blue:#002855; /* header */
+  --idfm-orange:#ff7f00; /* headings accent */
+  --idfm-alert:#d52b1e;
+  --idfm-info:#0b4a8b;
+  --card-bg:#0f1b2b; /* dark navy for card */
+  --card-fg:#e8eef7;
+  --badge-split:#e5eef7;
+}
+
+/* Top status bars */
+.top-status{background:var(--idfm-alert);color:#fff;padding:10px 14px;border-radius:8px;margin:10px 15px;font-weight:700}
+.top-news{background:var(--idfm-blue);color:#cde3ff;padding:8px 12px;border-radius:8px;margin:0 15px 12px;font-size:13px}
+
+/* 3-columns upper band */
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;padding:0 15px}
+.card-dark{background:var(--card-bg);color:var(--card-fg);border-radius:10px;padding:12px 14px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.card-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.card-head .dir{color:var(--idfm-orange);font-weight:700;letter-spacing:.3px}
+.card-head .pill{background:#1570ef;color:#fff;border-radius:12px;padding:2px 10px;font-weight:700}
+
+/* minutes row like screenshot */
+.minutes-row{display:flex;align-items:center;gap:18px}
+.split{width:2px;background:var(--badge-split);height:48px;opacity:.7}
+.minute-col{display:flex;flex-direction:column;align-items:center;min-width:72px}
+.minute-col .m{font-weight:800;font-size:28px;line-height:1;color:#fff}
+.minute-col .at{font-family:"Courier New",monospace;color:#cfe0ff;font-size:16px;margin-top:4px}
+.badge-imm{background:#6b3f26;color:#ffdead;border-radius:14px;padding:4px 10px;font-weight:800;margin-top:6px}
+
+/* All-buses grid */
+.all-bus{margin:14px 15px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tile{background:#f6f8fb;border:1px solid #e3e9f2;border-radius:10px;padding:10px}
+.tile-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.tile-head .pill{background:#2450a4;color:#fff;font-weight:700;border-radius:10px;padding:2px 8px}
+.tile .mins{display:flex;gap:8px;flex-wrap:wrap}
+.tile .min{background:#0b0b0b;color:#ffeb3b;border-radius:8px;padding:2px 6px;font-weight:800;min-width:36px;text-align:center}
+.tile .ended{background:#eceff4;color:#222;padding:2px 6px;border-radius:8px;font-weight:700}
+
+/* Lower band */
+.lower-grid{display:grid;grid-template-columns:1.2fr 1.2fr 1.6fr;gap:14px;margin:14px 15px}
+
+/* small tweaks existing */
+.header-left h1{letter-spacing:.2px}
