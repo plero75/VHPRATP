@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchWeather();
   fetchVelib();
   fetchTraffic();
-};)
+});
 
 
 /* 📁 style.css */
