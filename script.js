@@ -66,7 +66,7 @@ function setLastUpdate() {
 const PROXY = 'https://ratp-proxy.hippodrome-proxy42.workers.dev/?url=';
 const API_BASE = 'https://prim.iledefrance-mobilites.fr/marketplace';
 const WEATHER_URL = 'https://api.open-meteo.com/v1/forecast?latitude=48.835&longitude=2.45&current_weather=true';
-const RSS_URL = 'https://www.francetvinfo.fr/titres.rss';
+const RSS_URL = 'https://www.francetvinfo.fr/titres.rss/';
 const STOP_IDS = {
   RER_A: 'STIF:StopArea:SP:43135:',
   HIPPODROME: 'STIF:StopArea:SP:463641:',
