@@ -1,13 +1,12 @@
 {
   "Hippodrome de Vincennes": {
     "77": {
-      "2026-01-07": [
+      "2026-01-08": [
         {
           "time": "05:20",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -21,6 +20,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -29,7 +29,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -43,6 +42,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -51,7 +51,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -65,6 +64,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -73,7 +73,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -87,6 +86,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -103,7 +103,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -117,6 +116,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -133,7 +133,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -147,6 +146,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -155,7 +155,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -169,6 +168,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -185,7 +185,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -199,6 +198,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -215,7 +215,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -229,6 +228,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -245,7 +245,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -259,6 +258,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -275,7 +275,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -289,6 +288,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -305,7 +305,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -319,6 +318,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -335,7 +335,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -349,6 +348,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -365,7 +365,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -379,6 +378,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -395,7 +395,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -409,6 +408,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -425,7 +425,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -439,6 +438,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -455,7 +455,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -469,6 +468,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -485,7 +485,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -499,6 +498,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -515,7 +515,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -529,6 +528,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -545,7 +545,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -559,6 +558,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -575,7 +575,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -589,6 +588,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -605,7 +605,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -619,6 +618,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -635,7 +635,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -649,6 +648,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -665,7 +665,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -679,6 +678,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -695,7 +695,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -709,6 +708,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -725,7 +725,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -739,6 +738,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -755,7 +755,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -769,6 +768,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -785,7 +785,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -799,6 +798,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -815,7 +815,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -829,6 +828,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -845,7 +845,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -859,6 +858,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -875,7 +875,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -889,6 +888,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -905,7 +905,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -919,6 +918,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -935,7 +935,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -949,6 +948,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -965,7 +965,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -979,6 +978,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -995,7 +995,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1009,6 +1008,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1025,7 +1025,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1039,6 +1038,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1055,7 +1055,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1069,6 +1068,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1085,7 +1085,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1099,6 +1098,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1115,7 +1115,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1129,6 +1128,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1145,7 +1145,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1159,6 +1158,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1175,7 +1175,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1189,6 +1188,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1205,7 +1205,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1219,6 +1218,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1235,7 +1235,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1249,6 +1248,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1265,7 +1265,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1279,6 +1278,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1295,7 +1295,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1309,6 +1308,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1325,7 +1325,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1339,6 +1338,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1355,7 +1355,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1369,6 +1368,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1385,7 +1385,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1399,6 +1398,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1415,7 +1415,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1429,6 +1428,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1453,7 +1453,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1467,6 +1466,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1483,7 +1483,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1497,6 +1496,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1513,7 +1513,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1527,6 +1526,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1543,7 +1543,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1557,6 +1556,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1573,7 +1573,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1587,6 +1586,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1603,7 +1603,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1617,6 +1616,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1633,7 +1633,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1647,6 +1646,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1663,7 +1663,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1677,6 +1676,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1701,7 +1701,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1715,6 +1714,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1731,7 +1731,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1745,6 +1744,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1761,7 +1761,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1775,6 +1774,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1791,7 +1791,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1805,6 +1804,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1821,7 +1821,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1835,6 +1834,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1851,7 +1851,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -1865,6 +1864,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -1897,7 +1897,7 @@
   },
   "École du Breuil": {
     "201": {
-      "2026-01-07": [
+      "2026-01-08": [
         {
           "time": "05:30",
           "destination": "Porte Dorée",
@@ -4715,13 +4715,12 @@
       ]
     },
     "77": {
-      "2026-01-07": [
+      "2026-01-08": [
         {
           "time": "05:18",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -4735,6 +4734,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -4743,7 +4743,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -4757,6 +4756,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -4765,7 +4765,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -4779,6 +4778,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -4787,7 +4787,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -4801,6 +4800,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -4817,7 +4817,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -4831,6 +4830,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -4839,7 +4839,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -4853,6 +4852,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -4869,7 +4869,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -4883,6 +4882,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -4899,7 +4899,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -4913,6 +4912,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -4929,7 +4929,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -4943,6 +4942,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -4959,7 +4959,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -4973,6 +4972,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -4981,7 +4981,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -4995,6 +4994,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5011,7 +5011,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5025,6 +5024,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5041,7 +5041,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5055,6 +5054,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5071,7 +5071,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5085,6 +5084,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5101,7 +5101,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5115,6 +5114,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5131,7 +5131,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5145,6 +5144,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5161,7 +5161,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5175,6 +5174,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5191,7 +5191,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5205,6 +5204,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5221,7 +5221,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5235,6 +5234,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5251,7 +5251,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5265,6 +5264,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5281,7 +5281,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5295,6 +5294,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5319,7 +5319,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5333,6 +5332,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5349,7 +5349,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5363,6 +5362,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5379,7 +5379,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5393,6 +5392,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5409,7 +5409,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5423,6 +5422,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5439,7 +5439,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5453,6 +5452,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5469,7 +5469,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5483,6 +5482,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5499,7 +5499,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5513,6 +5512,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5529,7 +5529,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5543,6 +5542,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5559,7 +5559,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5573,6 +5572,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5589,7 +5589,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5603,6 +5602,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5619,7 +5619,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5633,6 +5632,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5649,7 +5649,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5663,6 +5662,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5679,7 +5679,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5693,6 +5692,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5709,7 +5709,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5723,6 +5722,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5739,7 +5739,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5753,6 +5752,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5769,7 +5769,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5783,6 +5782,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5799,7 +5799,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5813,6 +5812,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5829,7 +5829,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5843,6 +5842,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5859,7 +5859,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5873,6 +5872,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5889,7 +5889,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5903,6 +5902,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5919,7 +5919,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5933,6 +5932,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5949,7 +5949,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5963,6 +5962,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -5979,7 +5979,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -5993,6 +5992,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6009,7 +6009,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6023,6 +6022,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6039,7 +6039,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6053,6 +6052,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6069,7 +6069,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6083,6 +6082,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6099,7 +6099,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6113,6 +6112,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6129,7 +6129,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6143,6 +6142,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6159,7 +6159,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6173,6 +6172,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6189,7 +6189,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6203,6 +6202,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6219,7 +6219,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6233,6 +6232,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6257,7 +6257,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6271,6 +6270,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6287,7 +6287,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6301,6 +6300,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6317,7 +6317,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6331,6 +6330,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6347,7 +6347,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6361,6 +6360,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6377,7 +6377,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6391,6 +6390,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6407,7 +6407,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6421,6 +6420,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6445,7 +6445,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6459,6 +6458,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6475,7 +6475,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6489,6 +6488,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6505,7 +6505,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6519,6 +6518,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6535,7 +6535,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6549,6 +6548,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6565,7 +6565,6 @@
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Charenton- Wattignies",
-            "Porte de Reuilly",
             "Gravelle - Reuilly",
             "Gravelle - Liberté",
             "Gravelle - Jaurès",
@@ -6579,6 +6578,7 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances / Gare de Lyon",
             "Dugommier",
+            "Porte de Reuilly",
             "Gare de Lyon"
           ]
         },
@@ -6611,7 +6611,7 @@
   },
   "Joinville-le-Pont": {
     "RER A": {
-      "2026-01-07": []
+      "2026-01-08": []
     }
   }
 }
