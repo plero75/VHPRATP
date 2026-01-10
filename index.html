@@ -5,10 +5,6 @@
   <title>Dashboard Transports - Hippodrome de Vincennes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="static/idfm.css">
-  <link rel="stylesheet" href="static/idfm-responsive.css">
-  <link rel="stylesheet" href="static/idfm-direction.css">
-  <link rel="stylesheet" href="static/idfm-imm.css">
 </head>
 <body>
   <header>
@@ -25,47 +21,80 @@
   <div id="top-alert" class="top-status" style="display:none"></div>
   <div id="top-news" class="top-news" style="display:none"></div>
 
-  <section class="grid-3">
-    <div class="card-dark" id="card-rer">
-      <div class="card-head"><span class="pill">A</span><div class="dir">RER A – Joinville-le-Pont</div></div>
-      <div id="rer-traffic" class="traffic-sub" style="display:none"></div>
-      <div class="minutes-row" id="rer-minutes"></div>
-    </div>
-
-    <div class="card-dark" id="card-hippo-77">
-      <div class="card-head"><span class="pill" data-lineref="C02251">77</span><div class="dir">Hippodrome – Bus 77</div></div>
-      <div class="minutes-row" id="hippo-77-minutes"></div>
-    </div>
-
-    <div class="card-dark" id="card-breuil-77201">
-      <div class="card-head"><span class="pill" data-lineref="C02251">77</span><span class="pill" data-lineref="C02251">201</span><div class="dir">École du Breuil – 77 & 201</div></div>
-      <div class="minutes-row" id="breuil-minutes"></div>
-    </div>
-  </section>
-
-  <section class="tile-wrap">
-    <div class="tile-headline" style="margin:10px 15px;color:#223;opacity:.7">Arrêt Joinville‑le‑Pont — Tous bus</div>
-    <div class="all-bus" id="joinville-all-bus"></div>
-  </section>
-
-  <section class="lower-grid">
-    <div class="bloc" id="velib">
-      <div class="bloc-header"><h2>🚲 Vélib’ disponibles</h2></div>
-      <div class="velib-list">
-        <div><strong>Vincennes :</strong> <span id="velib-vincennes">—</span></div>
-        <div><strong>Breuil :</strong> <span id="velib-breuil">—</span></div>
+  <!-- SECTION 1: RER A -->
+  <section class="main-section rer-section">
+    <div class="section-title">🚆 RER A – Joinville-le-Pont</div>
+    <div class="rer-container">
+      <div class="rer-direction">
+        <div class="direction-label">▼ Direction Paris</div>
+        <div id="rer-paris-minutes" class="minutes-row"></div>
+      </div>
+      <div class="rer-direction">
+        <div class="direction-label">▲ Direction Boissy-Saint-Léger</div>
+        <div id="rer-boissy-minutes" class="minutes-row"></div>
       </div>
     </div>
+  </section>
 
-    <div class="bloc" id="courses">
-      <div class="bloc-header"><h2>🏇 Prochaines courses</h2></div>
-      <div id="courses-list" class="courses-info"><div class="loading">Chargement…</div></div>
+  <!-- SECTION 2: BUS PRINCIPAUX -->
+  <section class="main-section bus-section">
+    <div class="section-title">🚌 Bus – Hippodrome & École du Breuil</div>
+    <div class="bus-container">
+      <div class="bus-stop">
+        <div class="bus-stop-title">Bus 77 – Arrêt Hippodrome</div>
+        <div id="hippo-77-minutes" class="minutes-row"></div>
+      </div>
+      <div class="bus-stop">
+        <div class="bus-stop-title">Bus 77 & 201 – Arrêt École du Breuil</div>
+        <div id="breuil-minutes" class="minutes-row"></div>
+      </div>
     </div>
+  </section>
 
-    <div class="bloc" id="trafic-routier">
-      <div class="bloc-header"><h2>🛣️ Trafic routier (Sytadin)</h2></div>
-      <div id="road-list" class="road-list"><div class="loading">Chargement…</div></div>
+  <!-- SECTION 3: TOUS LES BUS JOINVILLE -->
+  <section class="main-section allbus-section">
+    <div class="section-title">🚏 Tous les Bus – Joinville-le-Pont (Vue Complète)</div>
+    <div id="joinville-all-bus" class="all-bus"></div>
+  </section>
+
+  <!-- SECTION 4: INFOS ANNEXES -->
+  <section class="main-section annex-section">
+    <div class="annex-grid">
+      <div class="annex-block velib-block">
+        <div class="annex-title">🚲 Vélib' disponibles</div>
+        <div class="velib-list">
+          <div><strong>Vincennes :</strong> <span id="velib-vincennes">—</span></div>
+          <div><strong>Breuil :</strong> <span id="velib-breuil">—</span></div>
+        </div>
+      </div>
+      <div class="annex-block weather-block">
+        <div class="annex-title">🌤️ Météo</div>
+        <div class="weather-info">
+          <div><span id="weather-emoji">🌤️</span> <span id="weather-desc">—</span></div>
+          <div><span id="weather-temp">—</span></div>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <!-- SECTION 5: COURSES & TRAFIC -->
+  <section class="main-section info-section">
+    <div class="info-grid">
+      <div class="info-block courses-block">
+        <div class="info-title">🏇 Prochaines Courses</div>
+        <div id="courses-list" class="courses-info"><div class="loading">Chargement…</div></div>
+      </div>
+      <div class="info-block traffic-block">
+        <div class="info-title">🛣️ Trafic Routier</div>
+        <div id="road-list" class="road-list"><div class="loading">Chargement…</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: ACTUALITÉS -->
+  <section class="main-section news-section">
+    <div class="section-title">📰 Actualités – France Info</div>
+    <div id="news-ticker" class="news-ticker"></div>
   </section>
 
   <footer>
@@ -73,17 +102,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script src="patches/hotpatch-buildMonitoringRef.js"></script>
-  <script src="patches/traffic-lineRef.patch.js"></script>
-  <script src="patches/courses-pmu-fallback.js"></script>
-  <script src="patches/line-pill-colors.js"></script>
-  <script src="patches/line-pill-extended-ui.js"></script>
-  <script src="patches/helpers-idfm-render.js"></script>
-  <script src="patches/makeMinuteCol-hotfix.js"></script>
-  <script src="patches/insertSplit-hotfix.js"></script>
-  <script src="patches/render-idfm-layout.js"></script>
-  <script src="patches/commercial-line-names.js"></script>
-  <script src="patches/direction-minute-render.js"></script>
-  <script src="patches/direction-header-override.js"></script>
 </body>
 </html>
