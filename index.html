@@ -1,565 +1,619 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Transports - Hippodrome Vincennes</title>
-<style>
-  :root{
-    --bg:#0b1b3f;
-    --panel:#10275f;
-    --chip:#061536;
-    --accent:#f5a623;
-    --ok:#0c8840;
-    --late:#d9b700;
-    --cancel:#d92a2a;
-    --soon:#c96a0a;
-    --muted:#2e394a;
-  }
-  *{box-sizing:border-box}
-  body{
-    font-family:'Segoe UI',Arial,sans-serif;
-    background:var(--bg);
-    color:#fff;
-    margin:0;
-    padding:20px;
-    width:1080px;
-    height:1920px;
-    overflow-y:auto;
-  }
-  
-  /* HEADER */
-  .header-container {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:20px;
-    padding-bottom:15px;
-    border-bottom:2px solid var(--accent);
-  }
-  .header-left {
-    display:flex;
-    align-items:center;
-    gap:15px;
-  }
-  .logo-placeholder {
-    width:60px;
-    height:55px;
-    background:#2ba7d9;
-    border-radius:8px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:bold;
-    font-size:20px;
-    color:white;
-  }
-  .header-left h1 {
-    margin:0;
-    font-size:24px;
-    font-weight:600;
-  }
-  .header-right {
-    display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    gap:4px;
-  }
-  #heure{
-    text-align:right;
-    font-family:'Courier New',monospace;
-    color:var(--accent);
-    font-size:28px;
-    font-weight:bold;
-    margin:0;
-  }
-  .last-update {
-    font-size:11px;
-    color:#999;
-  }
-  
-  /* TITRE PRINCIPAL */
-  .main-title {
-    text-align:center;
-    font-size:20px;
-    font-weight:700;
-    color:var(--accent);
-    margin:20px 0 15px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-  }
-  
-  /* SECTIONS */
-  .section-title {
-    font-size:16px;
-    font-weight:700;
-    color:var(--accent);
-    margin:20px 0 12px;
-    text-transform:uppercase;
-    padding-bottom:8px;
-    border-bottom:1px solid var(--panel);
-  }
-  
-  .lines-container {
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-  }
-  
-  .line-block{
-    background:var(--panel);
-    border-radius:12px;
-    margin:0;
-    padding:14px 14px 10px;
-    box-shadow:0 2px 8px #11142863;
-  }
-  .head{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-bottom:8px;
-  }
-  .badge{
-    display:inline-block;
-    padding:6px 12px;
-    border-radius:20px;
-    font-weight:700;
-    color:#fff;
-    min-width:44px;
-    text-align:center;
-    font-size:14px;
-  }
-  .direction{
-    color:var(--accent);
-    font-size:1.05rem;
-    margin:8px 0 4px;
-    font-weight:600;
-  }
-  .times{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:6px;
-  }
-  .time-box{
-    background:var(--chip);
-    border-radius:9px;
-    padding:9px 10px;
-    min-width:92px;
-    text-align:center;
-    flex:1;
-    min-width:80px;
-  }
-  .minutes-line{
-    font-size:1.35rem;
-    font-weight:800;
-  }
-  .when{
-    opacity:.9;
-    font-size:.95rem;
-  }
-  .status{
-    margin-top:3px;
-    padding:2px 7px;
-    border-radius:6px;
-    font-size:.82rem;
-    color:#fff;
-    letter-spacing:.03em;
-  }
-  .onTime{background:var(--ok)}
-  .delayed{background:var(--late)}
-  .cancelled{background:var(--cancel)}
-  .imminent{background:var(--soon);animation:blink 1s infinite}
-  .none{background:var(--muted);font-style:italic}
-  .traffic{
-    margin-top:8px;
-    color:#f9b92a;
-    font-size:.95rem;
-    padding:8px;
-    background:rgba(217,180,0,0.1);
-    border-radius:6px;
-  }
-  .no-data{
-    color:#b7c2d1;
-    padding:10px;
-    text-align:center;
-    font-style:italic;
-  }
-  @keyframes blink{0%,100%{opacity:1}50%{opacity:.55}}
-  
-  /* ANNEXES */
-  .annex-grid {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin:15px 0;
-  }
-  .annex-block {
-    background:var(--panel);
-    border-radius:10px;
-    padding:12px;
-    border-left:4px solid var(--accent);
-  }
-  .annex-title {
-    font-size:12px;
-    font-weight:700;
-    color:var(--accent);
-    margin-bottom:8px;
-    text-transform:uppercase;
-  }
-  .annex-content {
-    font-size:13px;
-    color:#fff;
-  }
-  .annex-content div {
-    margin:4px 0;
-  }
-  
-  /* NEWS */
-  .news-section {
-    background:var(--panel);
-    border-radius:10px;
-    padding:12px;
-    max-height:200px;
-    overflow-y:auto;
-    margin:15px 0;
-  }
-  .news-item {
-    font-size:12px;
-    color:#ccc;
-    padding:6px 0;
-    border-bottom:1px solid rgba(255,255,255,0.1);
-    line-height:1.4;
-  }
-  .news-item:last-child {
-    border-bottom:none;
-  }
-  
-  /* FOOTER */
-  footer {
-    text-align:center;
-    margin-top:20px;
-    padding-top:15px;
-    border-top:1px solid var(--panel);
-    font-size:10px;
-    color:#999;
-  }
-  
-  /* SCROLLBAR */
-  ::-webkit-scrollbar {
-    width:8px;
-  }
-  ::-webkit-scrollbar-track {
-    background:transparent;
-  }
-  ::-webkit-scrollbar-thumb {
-    background:var(--accent);
-    border-radius:4px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background:#f9c952;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Mobilité - Joinville / Vincennes</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --bg: #0a1628;
+      --panel: #132447;
+      --chip: #0d1b35;
+      --accent: #f5a623;
+      --ok: #22c55e;
+      --warning: #eab308;
+      --error: #ef4444;
+      --muted: #64748b;
+      --text: #f1f5f9;
+      --text-sec: #cbd5e1;
+      --border: #1e3a5f;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* ===== ZONE A: BANDEAU GLOBAL ===== */
+    .zone-a {
+      background: linear-gradient(135deg, #0f2847 0%, #132f52 100%);
+      border-bottom: 3px solid var(--accent);
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .zone-a-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .logo {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--accent), #ff8c00);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 24px;
+      color: #000;
+    }
+    
+    .zone-a-title {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    
+    .zone-a-title h1 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+    }
+    
+    .zone-a-title p {
+      font-size: 12px;
+      color: var(--text-sec);
+      margin: 0;
+    }
+    
+    .zone-a-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+    }
+    
+    #heure {
+      font-family: 'Courier New', monospace;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    
+    .zone-a-meta {
+      font-size: 12px;
+      color: var(--text-sec);
+    }
+    
+    /* ===== ZONE B: CŒUR TRANSPORT ===== */
+    .zone-b {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .stop-block {
+      background: var(--panel);
+      border-radius: 12px;
+      border-left: 5px solid var(--accent);
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .stop-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .lines-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .line-item {
+      background: var(--chip);
+      border-radius: 8px;
+      padding: 10px;
+      border-left: 3px solid var(--muted);
+    }
+    
+    .line-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    
+    .line-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--muted);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    
+    .line-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    
+    .directions-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-left: 48px;
+    }
+    
+    .direction-item {
+      font-size: 12px;
+      color: var(--text-sec);
+      padding: 6px 0;
+    }
+    
+    .direction-label {
+      font-weight: 600;
+      color: var(--text);
+    }
+    
+    .passages {
+      display: flex;
+      gap: 8px;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+    
+    .passage-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 10px;
+      text-align: center;
+      min-width: 70px;
+    }
+    
+    .passage-time {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    
+    .passage-heure {
+      font-size: 11px;
+      color: var(--text-sec);
+      margin-top: 2px;
+    }
+    
+    .passage-status {
+      font-size: 9px;
+      margin-top: 3px;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .status-ok { background: var(--ok); color: #000; }
+    .status-warning { background: var(--warning); color: #000; }
+    .status-error { background: var(--error); color: #fff; }
+    .status-muted { background: var(--muted); color: #fff; }
+    
+    .no-passage {
+      color: var(--muted);
+      font-style: italic;
+      font-size: 11px;
+    }
+    
+    /* ===== ZONE C: VUE EXHAUSTIVE ===== */
+    .zone-c {
+      background: var(--panel);
+      border-top: 2px solid var(--border);
+      padding: 12px 20px;
+      max-height: 180px;
+      overflow-y: auto;
+    }
+    
+    .zone-c-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    
+    .all-bus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      font-size: 11px;
+    }
+    
+    .bus-item {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 6px 8px;
+      border-radius: 4px;
+      border-left: 2px solid var(--accent);
+    }
+    
+    .bus-item-line {
+      font-weight: 700;
+      color: var(--accent);
+    }
+    
+    .bus-item-dests {
+      color: var(--text-sec);
+      margin-top: 2px;
+    }
+    
+    /* ===== ZONE D: MODULES CONTEXTUELS ===== */
+    .zone-d {
+      background: var(--panel);
+      border-top: 2px solid var(--border);
+      padding: 12px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    
+    .module {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 10px;
+      border-left: 3px solid var(--accent);
+    }
+    
+    .module-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    
+    .module-content {
+      font-size: 12px;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    
+    .module-content div {
+      margin: 3px 0;
+    }
+    
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 3px;
+    }
+    
+    /* Animation */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .imminent { animation: pulse 1s infinite; }
+  </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<div class="header-container">
-  <div class="header-left">
-    <div class="logo-placeholder">VH</div>
-    <h1>Dashboard Transports</h1>
-  </div>
-  <div class="header-right">
-    <div id="heure">--:--:--</div>
-    <div class="last-update" id="lastUpdate">Maj --:--</div>
-  </div>
-</div>
-
-<!-- TITRE PRINCIPAL -->
-<div class="main-title">🚆 Temps Réel - Joinville-le-Pont</div>
-
-<!-- LIGNES PRINCIPALES (RER A + BUS 77/201) -->
-<div id="linesContainer" class="lines-container"></div>
-
-<!-- INFOS ANNEXES -->
-<div class="section-title">📊 Infos Complémentaires</div>
-<div class="annex-grid">
-  <div class="annex-block">
-    <div class="annex-title">🚲 Vélib'</div>
-    <div class="annex-content">
-      <div><strong>Vincennes:</strong> <span id="velib-vincennes">--</span></div>
-      <div><strong>Breuil:</strong> <span id="velib-breuil">--</span></div>
+  <!-- ZONE A: BANDEAU GLOBAL -->
+  <div class="zone-a">
+    <div class="zone-a-left">
+      <div class="logo">VH</div>
+      <div class="zone-a-title">
+        <h1>Dashboard Mobilité</h1>
+        <p>Joinville-le-Pont • Vincennes • Breuil</p>
+      </div>
+    </div>
+    <div class="zone-a-right">
+      <div id="heure">--:--:--</div>
+      <div class="zone-a-meta">Maj <span id="lastUpdate">--:--</span></div>
     </div>
   </div>
-  <div class="annex-block">
-    <div class="annex-title">🌤️ Météo</div>
-    <div class="annex-content">
-      <div><span id="weather-emoji">--</span> <span id="weather-desc">--</span></div>
-      <div><strong id="weather-temp">--</strong></div>
+
+  <!-- ZONE B: CŒUR TRANSPORT -->
+  <div class="zone-b" id="zone-b"></div>
+
+  <!-- ZONE C: VUE EXHAUSTIVE -->
+  <div class="zone-c">
+    <div class="zone-c-title">📍 Tous les Bus - Joinville (Vue Complète)</div>
+    <div class="all-bus-grid" id="allBusGrid"></div>
+  </div>
+
+  <!-- ZONE D: CONTEXTE -->
+  <div class="zone-d">
+    <div class="module">
+      <div class="module-title">🚲 Vélib'</div>
+      <div class="module-content">
+        <div>Vincennes: <strong id="velib-v">--</strong></div>
+        <div>Breuil: <strong id="velib-b">--</strong></div>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-title">🌤️ Météo</div>
+      <div class="module-content">
+        <div><span id="weather-emoji">--</span> <strong id="weather-desc">--</strong></div>
+        <div id="weather-temp">--</div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- ACTUALITES -->
-<div class="section-title">📰 Actualités France Info</div>
-<div class="news-section" id="news-ticker"></div>
-
-<!-- FOOTER -->
-<footer>
-  <p>© Hippodrome de Vincennes – Données: Île-de-France Mobilités, RATP, SNCF, Open-Meteo, Opendata Paris, PMU</p>
-</footer>
-
-<script>
-const proxy = 'https://ratp-proxy.hippodrome-proxy42.workers.dev/?url=';
-const enc = encodeURIComponent;
-
-const DEFAULT_COLORS = {
-  'STIF:Line::C01742:':'#E41E26',
-  'STIF:Line::C02251:':'#0071bc',
-  'STIF:Line::C01219:':'#6E491E',
-  'STIF:Line::C01130:':'#f0a500',
-  'STIF:Line::C01135:':'#e4002b',
-  'STIF:Line::C01137:':'#d10073',
-  'STIF:Line::C01139:':'#642580',
-  'STIF:Line::C01141:':'#ff5a00',
-  'STIF:Line::C01260:':'#d9a300',
-  'STIF:Line::C01399:':'#ff5a00'
-};
-
-const LINES = [
-  { name:'RER A', line:'STIF:Line::C01742:', monitoring:['STIF:StopArea:SP:43135:'] },
-  { name:'77',    line:'STIF:Line::C02251:', monitoring:['STIF:StopPoint:Q:22452:'] },
-  { name:'101',   line:'STIF:Line::C01130:', monitoring:['STIF:StopPoint:Q:21252:'] },
-  { name:'106',   line:'STIF:Line::C01135:', monitoring:['STIF:StopPoint:Q:27560:'] },
-  { name:'108',   line:'STIF:Line::C01137:', monitoring:['STIF:StopPoint:Q:28032:'] },
-  { name:'110',   line:'STIF:Line::C01139:', monitoring:['STIF:StopPoint:Q:28032:'] },
-  { name:'112',   line:'STIF:Line::C01141:', monitoring:['STIF:StopPoint:Q:28065:','STIF:StopPoint:Q:39406:'] },
-  { name:'201',   line:'STIF:Line::C01219:', monitoring:['STIF:StopPoint:Q:39406:','STIF:StopPoint:Q:22452:'] },
-  { name:'281',   line:'STIF:Line::C01260:', monitoring:['STIF:StopPoint:Q:28033:'] },
-  { name:'N33',   line:'STIF:Line::C01399:', monitoring:['STIF:StopPoint:Q:39406:'] }
-];
-
-function updateHeure(){
-  const n=new Date();
-  document.getElementById('heure').textContent = n.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
-}
-setInterval(updateHeure,950);
-updateHeure();
-
-function setLastUpdate() {
-  const el = document.getElementById('lastUpdate');
-  if(el) el.textContent = `Maj ${new Date().toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}`;
-}
-
-function minutesUntil(dateStr){ if(!dateStr) return null; const now=new Date(); const t=new Date(dateStr); return Math.max(0,Math.round((t-now)/60000)); }
-function hhmm(dateStr){ if(!dateStr) return '—'; const d=new Date(dateStr); return d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}); }
-
-async function getLineColor(lineRef){
-  return DEFAULT_COLORS[lineRef] || '#546e7a';
-}
-
-async function fetchDepartures(line){
-  for(const m of line.monitoring){
-    const url = `${proxy}https://prim.iledefrance-mobilites.fr/marketplace/stop-monitoring?MonitoringRef=${enc(m)}&LineRef=${enc(line.line)}`;
-    try {
-      const res = await fetch(url);
-      if(!res.ok) continue;
-      const json = await res.json();
-
-      const visits = json?.Siri?.ServiceDelivery
-        ?.StopMonitoringDelivery?.[0]
-        ?.MonitoredStopVisit || [];
-
-      const filtered = visits.filter(v =>
-        v?.MonitoredVehicleJourney?.LineRef?.value === line.line
-      );
-
-      if(!filtered.length) continue;
-
-      return filtered.map(v => {
-        const mvj = v.MonitoredVehicleJourney;
-        const call = mvj?.MonitoredCall;
-        return {
-          dest: mvj?.DestinationName?.[0]?.value || '–',
-          time: call?.ExpectedDepartureTime || call?.AimedDepartureTime || null,
-          status: (call?.DepartureStatus || 'onTime').toLowerCase()
-        };
-      });
-    } catch(e) {
-      console.error('Error fetching:', line.name, e);
+  <script>
+    const proxy = 'https://ratp-proxy.hippodrome-proxy42.workers.dev/?url=';
+    const enc = encodeURIComponent;
+    
+    // === CONFIG ===
+    const COLORS = {
+      'STIF:Line::C01742:': '#E41E26', // RER A
+      'STIF:Line::C02251:': '#0071bc', // 77
+      'STIF:Line::C01219:': '#6E491E', // 201
+      'STIF:Line::C01130:': '#f0a500', // 101
+      'STIF:Line::C01135:': '#e4002b', // 106
+      'STIF:Line::C01137:': '#d10073', // 108
+      'STIF:Line::C01139:': '#642580', // 110
+      'STIF:Line::C01141:': '#ff5a00', // 112
+      'STIF:Line::C01260:': '#d9a300', // 281
+      'STIF:Line::C01399:': '#ff5a00'  // N33
+    };
+    
+    const LINES = [
+      { name: 'RER A', line: 'STIF:Line::C01742:', monitoring: ['STIF:StopArea:SP:43135:'], stop: 'Joinville - RER' },
+      { name: '77', line: 'STIF:Line::C02251:', monitoring: ['STIF:StopPoint:Q:22452:'], stop: 'Joinville - Bus' },
+      { name: '101', line: 'STIF:Line::C01130:', monitoring: ['STIF:StopPoint:Q:21252:'], stop: 'Joinville - Bus' },
+      { name: '106', line: 'STIF:Line::C01135:', monitoring: ['STIF:StopPoint:Q:27560:'], stop: 'Joinville - Bus' },
+      { name: '108', line: 'STIF:Line::C01137:', monitoring: ['STIF:StopPoint:Q:28032:'], stop: 'Joinville - Bus' },
+      { name: '110', line: 'STIF:Line::C01139:', monitoring: ['STIF:StopPoint:Q:28032:'], stop: 'Joinville - Bus' },
+      { name: '112', line: 'STIF:Line::C01141:', monitoring: ['STIF:StopPoint:Q:28065:', 'STIF:StopPoint:Q:39406:'], stop: 'Joinville - Bus' },
+      { name: '201', line: 'STIF:Line::C01219:', monitoring: ['STIF:StopPoint:Q:39406:', 'STIF:StopPoint:Q:22452:'], stop: 'École du Breuil' },
+      { name: '281', line: 'STIF:Line::C01260:', monitoring: ['STIF:StopPoint:Q:28033:'], stop: 'Joinville - Bus' },
+      { name: 'N33', line: 'STIF:Line::C01399:', monitoring: ['STIF:StopPoint:Q:39406:'], stop: 'Joinville - Bus' }
+    ];
+    
+    // === UTILS ===
+    function updateClock() {
+      const n = new Date();
+      document.getElementById('heure').textContent = n.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit', second:'2-digit'});
     }
-  }
-  return [];
-}
-
-async function fetchTraffic(lineRef){
-  const url1=`${proxy}https://prim.iledefrance-mobilites.fr/marketplace/general-message?LineRef=${enc(lineRef)}`;
-  const url2=`${proxy}https://prim.iledefrance-mobilites.fr/marketplace/situation-exchange?LineRef=${enc(lineRef)}`;
-  const messages=[];
-  try{
-    const r=await fetch(url1);
-    if(r.ok){
-      const j=await r.json();
-      (j?.Siri?.ServiceDelivery?.GeneralMessageDelivery||[])
-        .flatMap(d=>d.InfoMessage||[])
-        .forEach(m=>{
-          const txt=m?.InfoMessageText?.[0]?.value;
-          if(txt) messages.push(txt);
-        });
+    
+    function setLastUpdate() {
+      const el = document.getElementById('lastUpdate');
+      if(el) el.textContent = new Date().toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
     }
-  }catch{}
-  try{
-    const r=await fetch(url2);
-    if(r.ok){
-      const j=await r.json();
-      (j?.Siri?.ServiceDelivery?.SituationExchangeDelivery||[])
-        .flatMap(d=>d.Situations?.PtSituationElement||[])
-        .forEach(s=>{
-          const summary=s?.Summary?.[0]?.value;
-          const desc=s?.Description?.[0]?.value;
-          if(summary) messages.push(summary);
-          else if(desc) messages.push(desc);
-        });
+    
+    function minutesUntil(dateStr) {
+      if(!dateStr) return null;
+      const now = new Date();
+      const t = new Date(dateStr);
+      return Math.max(0, Math.round((t - now) / 60000));
     }
-  }catch{}
-  return [...new Set(messages)];
-}
-
-function renderDepartures(depList){
-  const wrap=document.createElement('div');
-  if(!depList.length){
-    wrap.innerHTML = `<div class="no-data">Aucun passage disponible</div>`;
-    return wrap;
-  }
-  const byDest={};
-  depList.forEach(d=>{ (byDest[d.dest] ||= []).push(d); });
-  for(const dest in byDest){
-    const row=document.createElement('div');
-    row.style.display='flex';
-    row.style.alignItems='center';
-    row.style.justifyContent='space-between';
-    row.style.gap='12px';
-    row.style.margin='10px 0';
-
-    const dir=document.createElement('div');
-    dir.className='direction';
-    dir.textContent = dest.substring(0,30);
-    row.appendChild(dir);
-
-    const times=document.createElement('div');
-    times.style.display='flex';
-    times.style.gap='10px';
-
-    byDest[dest].slice(0,2).forEach(d=>{
-      const box=document.createElement('div');
-      box.className='time-box';
-      const m=minutesUntil(d.time);
-      let cls='onTime';
-      if(m===null) cls='none';
-      else if(d.status==='cancelled') cls='cancelled';
-      else if(d.status==='delayed') cls='delayed';
-      else if(m<2) cls='imminent';
-      box.innerHTML = `<div class="minutes-line">${m===null?'—':m+' min'}</div><div class="when">${hhmm(d.time)}</div><div class="status ${cls}">${cls.toUpperCase()}</div>`;
-      times.appendChild(box);
-    });
-
-    row.appendChild(times);
-    wrap.appendChild(row);
-  }
-  return wrap;
-}
-
-async function renderLine(line){
-  const container = document.getElementById('linesContainer');
-  const block = document.createElement('div'); block.className='line-block';
-  const [color, deps, traffic] = await Promise.all([
-    getLineColor(line.line),
-    fetchDepartures(line),
-    fetchTraffic(line.line)
-  ]);
-  const head = document.createElement('div'); head.className='head';
-  head.innerHTML = `<span class="badge" style="background:${color}">${line.name}</span>`;
-  block.appendChild(head);
-  block.appendChild(renderDepartures(deps));
-  if(traffic.length){
-    const t=document.createElement('div'); t.className='traffic'; t.textContent = '⚠️ '+traffic.join(' | ');
-    block.appendChild(t);
-  }
-  container.appendChild(block);
-}
-
-async function refreshAll(){
-  const root=document.getElementById('linesContainer');
-  root.innerHTML='';
-  for(const line of LINES){ await renderLine(line); }
-  setLastUpdate();
-}
-
-// Météo
-async function refreshWeather(){
-  try {
-    const url = 'https://api.open-meteo.com/v1/forecast?latitude=48.835&longitude=2.45&current_weather=true';
-    const data = await fetch(url).then(r=>r.json());
-    if(data?.current_weather) {
-      const {temperature, weathercode} = data.current_weather;
-      const codes = {
-        0:{e:'☀️',d:'Ensoleillé'},1:{e:'🌤️',d:'Dégagé'},2:{e:'⛅',d:'Nuageux'},3:{e:'☁️',d:'Couvert'},
-        45:{e:'🌫️',d:'Brouillard'},61:{e:'🌦️',d:'Pluie'},80:{e:'⛈️',d:'Averses'}
-      };
-      const info = codes[weathercode] || codes[0];
-      document.getElementById('weather-emoji').textContent = info.e;
-      document.getElementById('weather-desc').textContent = info.d;
-      document.getElementById('weather-temp').textContent = Math.round(temperature)+'°C';
+    
+    function hhmm(dateStr) {
+      if(!dateStr) return '--:--';
+      return new Date(dateStr).toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
     }
-  } catch(e) { console.error('Weather error:', e); }
-}
-
-// Vélib'
-async function refreshVelib(){
-  const stations = {VINCENNES:'12163', BREUIL:'12128'};
-  for(const [key, id] of Object.entries(stations)) {
-    try {
-      const url = `https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/velib-disponibilite-en-temps-reel/records?where=stationcode%3D${id}&limit=1`;
-      const data = await fetch(url).then(r=>r.json());
-      const st = data?.results?.[0];
-      const el = document.getElementById(`velib-${key.toLowerCase()}`);
-      if(el) el.textContent = st ? (st.mechanical_bikes||0)+(st.ebike_bikes||0)+' dispo' : '--';
-    } catch(e) { console.error('Velib error:', e); }
-  }
-}
-
-// News
-async function refreshNews(){
-  try {
-    const xml = await fetch('https://www.francetvinfo.fr/titres.rss').then(r=>r.text());
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(xml, 'text/xml');
-    const ticker = document.getElementById('news-ticker');
-    ticker.innerHTML = '';
-    [...doc.querySelectorAll('item')].slice(0,4).forEach(item=>{
-      const title = item.querySelector('title')?.textContent || '';
-      if(title) {
-        const div = document.createElement('div');
-        div.className = 'news-item';
-        div.textContent = title;
-        ticker.appendChild(div);
+    
+    // === FETCH ===
+    async function fetchDepartures(line) {
+      for(const m of line.monitoring) {
+        try {
+          const url = `${proxy}https://prim.iledefrance-mobilites.fr/marketplace/stop-monitoring?MonitoringRef=${enc(m)}&LineRef=${enc(line.line)}`;
+          const res = await fetch(url);
+          if(!res.ok) continue;
+          const json = await res.json();
+          const visits = json?.Siri?.ServiceDelivery?.StopMonitoringDelivery?.[0]?.MonitoredStopVisit || [];
+          const filtered = visits.filter(v => v?.MonitoredVehicleJourney?.LineRef?.value === line.line);
+          if(!filtered.length) continue;
+          return filtered.map(v => {
+            const mvj = v.MonitoredVehicleJourney;
+            const call = mvj?.MonitoredCall;
+            return {
+              dest: mvj?.DestinationName?.[0]?.value || '–',
+              time: call?.ExpectedDepartureTime || call?.AimedDepartureTime || null,
+              status: (call?.DepartureStatus || 'onTime').toLowerCase()
+            };
+          });
+        } catch(e) {
+          console.error('Fetch error:', e);
+        }
       }
+      return [];
+    }
+    
+    // === RENDER ZONE B ===
+    async function renderZoneB() {
+      const zoneB = document.getElementById('zone-b');
+      zoneB.innerHTML = '';
+      
+      const stops = {};
+      for(const line of LINES) {
+        const deps = await fetchDepartures(line);
+        const stop = line.stop;
+        if(!stops[stop]) stops[stop] = { title: stop, lines: [] };
+        stops[stop].lines.push({ line, deps });
+      }
+      
+      for(const [stopKey, stop] of Object.entries(stops)) {
+        const stopBlock = document.createElement('div');
+        stopBlock.className = 'stop-block';
+        
+        const title = document.createElement('div');
+        title.className = 'stop-title';
+        title.textContent = stop.title;
+        stopBlock.appendChild(title);
+        
+        const linesList = document.createElement('div');
+        linesList.className = 'lines-list';
+        
+        for(const {line, deps} of stop.lines) {
+          const lineItem = document.createElement('div');
+          lineItem.className = 'line-item';
+          lineItem.style.borderLeftColor = COLORS[line.line] || '#999';
+          
+          const header = document.createElement('div');
+          header.className = 'line-header';
+          const badge = document.createElement('div');
+          badge.className = 'line-badge';
+          badge.style.background = COLORS[line.line] || '#999';
+          badge.textContent = line.name;
+          const name = document.createElement('div');
+          name.className = 'line-name';
+          name.textContent = line.line.includes('C01742') ? 'RER A' : `Bus ${line.name}`;
+          header.appendChild(badge);
+          header.appendChild(name);
+          lineItem.appendChild(header);
+          
+          const dirGroup = document.createElement('div');
+          dirGroup.className = 'directions-group';
+          
+          if(!deps.length) {
+            const dirItem = document.createElement('div');
+            dirItem.className = 'direction-item';
+            dirItem.innerHTML = '<span class="direction-label">Aucune direction</span> <span class="no-passage">Service indisponible</span>';
+            dirGroup.appendChild(dirItem);
+          } else {
+            const byDest = {};
+            deps.forEach(d => (byDest[d.dest] ||= []).push(d));
+            for(const [dest, depsList] of Object.entries(byDest)) {
+              const dirItem = document.createElement('div');
+              dirItem.className = 'direction-item';
+              
+              const dirLabel = document.createElement('span');
+              dirLabel.className = 'direction-label';
+              dirLabel.textContent = dest.substring(0, 40);
+              dirItem.appendChild(dirLabel);
+              
+              const passages = document.createElement('div');
+              passages.className = 'passages';
+              depsList.slice(0, 3).forEach(d => {
+                const box = document.createElement('div');
+                box.className = 'passage-box';
+                const m = minutesUntil(d.time);
+                let statusClass = 'status-ok';
+                let statusText = 'OK';
+                if(m === null) { statusClass = 'status-muted'; statusText = 'N/A'; }
+                else if(d.status === 'cancelled') { statusClass = 'status-error'; statusText = 'ANNULÉ'; }
+                else if(d.status === 'delayed') { statusClass = 'status-warning'; statusText = 'RETARD'; }
+                else if(m < 2) { box.classList.add('imminent'); statusText = 'IMMINENT'; }
+                
+                box.innerHTML = `<div class="passage-time">${m === null ? '–' : m + ' min'}</div><div class="passage-heure">${hhmm(d.time)}</div><div class="passage-status ${statusClass}">${statusText}</div>`;
+                passages.appendChild(box);
+              });
+              dirItem.appendChild(passages);
+              dirGroup.appendChild(dirItem);
+            }
+          }
+          lineItem.appendChild(dirGroup);
+          linesList.appendChild(lineItem);
+        }
+        stopBlock.appendChild(linesList);
+        zoneB.appendChild(stopBlock);
+      }
+    }
+    
+    // === RENDER ZONE C ===
+    async function renderZoneC() {
+      const grid = document.getElementById('allBusGrid');
+      grid.innerHTML = '';
+      
+      for(const line of LINES) {
+        if(line.line.includes('C01742')) continue; // Skip RER A
+        const deps = await fetchDepartures(line);
+        const item = document.createElement('div');
+        item.className = 'bus-item';
+        item.style.borderLeftColor = COLORS[line.line];
+        
+        const lineDiv = document.createElement('div');
+        lineDiv.className = 'bus-item-line';
+        lineDiv.style.color = COLORS[line.line];
+        lineDiv.textContent = `● Ligne ${line.name}`;
+        item.appendChild(lineDiv);
+        
+        const destsDiv = document.createElement('div');
+        destsDiv.className = 'bus-item-dests';
+        const dests = [...new Set(deps.map(d => d.dest).slice(0, 2))];
+        destsDiv.textContent = dests.join(' • ') || 'Aucun passage';
+        item.appendChild(destsDiv);
+        
+        grid.appendChild(item);
+      }
+    }
+    
+    // === MÉTÉO ===
+    async function refreshWeather() {
+      try {
+        const data = await fetch('https://api.open-meteo.com/v1/forecast?latitude=48.835&longitude=2.45&current_weather=true').then(r => r.json());
+        if(data?.current_weather) {
+          const {temperature, weathercode} = data.current_weather;
+          const codes = {0:{e:'☀️',d:'Ensoleillé'},1:{e:'🌤️',d:'Dégagé'},2:{e:'⛅',d:'Nuageux'},3:{e:'☁️',d:'Couvert'},45:{e:'🌫️',d:'Brouillard'},61:{e:'🌦️',d:'Pluie'},80:{e:'⛈️',d:'Averses'}};
+          const info = codes[weathercode] || codes[0];
+          document.getElementById('weather-emoji').textContent = info.e;
+          document.getElementById('weather-desc').textContent = info.d;
+          document.getElementById('weather-temp').textContent = Math.round(temperature) + '°C';
+        }
+      } catch(e) { console.error('Weather:', e); }
+    }
+    
+    // === VELIB ===
+    async function refreshVelib() {
+      const stations = {v:'12163', b:'12128'};
+      for(const [key, id] of Object.entries(stations)) {
+        try {
+          const data = await fetch(`https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/velib-disponibilite-en-temps-reel/records?where=stationcode%3D${id}&limit=1`).then(r => r.json());
+          const st = data?.results?.[0];
+          const el = document.getElementById(`velib-${key}`);
+          if(el) el.textContent = st ? (st.mechanical_bikes||0) + (st.ebike_bikes||0) + ' dispo' : 'N/A';
+        } catch(e) { console.error('Velib:', e); }
+      }
+    }
+    
+    // === INIT ===
+    setInterval(updateClock, 1000);
+    updateClock();
+    
+    async function init() {
+      await Promise.all([renderZoneB(), renderZoneC(), refreshWeather(), refreshVelib()]);
+      setLastUpdate();
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      init();
+      setInterval(init, 60000);
     });
-  } catch(e) { console.error('News error:', e); }
-}
-
-// Init
-refreshAll();
-refreshWeather();
-refreshVelib();
-refreshNews();
-
-setInterval(refreshAll, 60000);
-setInterval(refreshWeather, 600000);
-setInterval(refreshVelib, 180000);
-setInterval(refreshNews, 600000);
-</script>
-
+  </script>
 </body>
 </html>
