@@ -1,5 +1,23 @@
-/* Dashboard Transports - Hippodrome de Vincennes */
-/* Optimise pour ecran 1080x1920 portrait */
+/* ============================================
+   Dashboard Transports - Hippodrome Vincennes
+   Optimisé pour écran 40" portrait (1080x1920)
+   ============================================ */
+
+:root {
+  --bg-main: #0b1429;
+  --panel-dark: #1a2847;
+  --panel-light: #2d3e5f;
+  --accent: #2ba7d9;
+  --accent-rer: #E41E26;
+  --accent-bus: #0071bc;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b8c5;
+  --success: #0c8840;
+  --warning: #d9b700;
+  --danger: #d92a2a;
+  --imminent: #c96a0a;
+  --border: rgba(255,255,255,0.1);
+}
 
 * {
   margin: 0;
@@ -8,26 +26,27 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  color: #333;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-primary);
   width: 1080px;
   height: 1920px;
   overflow: hidden;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.4;
 }
 
-/* Header */
+/* ========== HEADER ========== */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #2c3e50, #3498db);
-  color: white;
-  padding: 15px 25px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: linear-gradient(90deg, #0d1f3a 0%, #1a3a52 100%);
+  color: var(--text-primary);
+  padding: 12px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
   height: 80px;
+  border-bottom: 2px solid var(--accent);
 }
 
 .header-left {
@@ -37,250 +56,425 @@ header {
 }
 
 .logo {
-  height: 50px;
+  height: 55px;
   width: auto;
 }
 
 header h1 {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 600;
   margin: 0;
 }
 
-#horloge {
-  font-size: 32px;
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+#clock {
+  font-size: 28px;
   font-weight: bold;
   font-family: 'Courier New', monospace;
-  background: rgba(255,255,255,0.1);
-  padding: 8px 15px;
-  border-radius: 8px;
+  color: var(--accent);
 }
 
-/* Dashboard Grid */
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, 1fr);
-  gap: 15px;
-  padding: 15px;
-  height: calc(1920px - 80px - 60px);
+#lastUpdate {
+  font-size: 11px;
+  color: var(--text-secondary);
 }
 
-/* Blocs principaux */
-.bloc {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 20px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s ease;
-}
-
-.bloc:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
-.bloc-header {
-  margin-bottom: 15px;
-}
-
-.bloc h2 {
-  font-size: 20px;
+/* ========== ALERTS ========== */
+#top-alert {
+  background: var(--danger);
+  color: white;
+  padding: 8px 20px;
+  text-align: center;
   font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 10px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #ecf0f1;
-}
-
-/* Bannieres d'alerte */
-.alert-banner {
-  background: #e74c3c;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  margin-top: 8px;
-}
-
-.alert-banner.warning {
-  background: #f39c12;
-}
-
-.alert-banner.info {
-  background: #3498db;
-}
-
-/* Departs */
-.depart-list {
-  min-height: 200px;
-}
-
-.depart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 15px;
-  margin: 8px 0;
-  border-radius: 8px;
-  background: #f8f9fa;
-  border-left: 4px solid #3498db;
-}
-
-.depart-item.cancelled {
-  background: #ffebee;
-  border-left-color: #e74c3c;
-}
-
-.depart-item.delayed {
-  background: #fff3e0;
-  border-left-color: #ff9800;
-}
-
-.depart-item.imminent {
-  background: #e8f5e8;
-  border-left-color: #4caf50;
-}
-
-.depart-time {
-  font-size: 18px;
-  font-weight: bold;
-  font-family: 'Courier New', monospace;
-}
-
-.depart-destination {
-  font-size: 14px;
-  color: #666;
-}
-
-.depart-info {
-  text-align: right;
-  font-size: 14px;
-}
-
-/* Badges */
-.badge {
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
-  margin-left: 8px;
-}
-
-.badge.dernier { background: #ff9800; }
-.badge.imminent { background: #4caf50; }
-.badge.retard { background: #f44336; }
-.badge.supprime { background: #9e9e9e; }
-
-/* Arrets desservis */
-.served-stops {
-  background: #e3f2fd;
-  padding: 10px;
-  border-radius: 6px;
-  margin-top: 10px;
-  font-size: 12px;
-  color: #1976d2;
-}
-
-/* Velib */
-.velib-station {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  margin: 5px 0;
-  background: #f0f7ff;
-  border-radius: 6px;
-  border-left: 3px solid #2196f3;
-}
-
-.station-status {
-  display: flex;
-  gap: 15px;
   font-size: 13px;
 }
 
-/* Meteo */
-.meteo-current {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
-  background: linear-gradient(135deg, #74b9ff, #0984e3);
-  color: white;
+#top-news {
+  background: var(--panel-light);
+  padding: 8px 20px;
+  border-top: 1px solid var(--border);
+}
+
+.top-news-item {
+  color: var(--text-secondary);
+  font-size: 12px;
+  padding: 4px 0;
+}
+
+.top-news-item.alert {
+  color: var(--warning);
+}
+
+.top-news-item.ok {
+  color: var(--success);
+}
+
+/* ========== MAIN SECTIONS ========== */
+.main-section {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel-dark);
+  margin: 0;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ========== RER A ========== */
+.rer-section {
+  background: linear-gradient(135deg, #0d1f3a 0%, #1a2847 100%);
+}
+
+.rer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.rer-direction {
+  background: rgba(0,0,0,0.3);
   border-radius: 8px;
-  margin-bottom: 10px;
+  padding: 12px;
+  border-left: 4px solid var(--accent-rer);
 }
 
-.meteo-temp {
-  font-size: 36px;
-  font-weight: bold;
+.direction-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
-/* News */
+/* ========== BUS PRINCIPALS ========== */
+.bus-section {
+  background: linear-gradient(135deg, #0a1a35 0%, #152f47 100%);
+}
+
+.bus-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.bus-stop {
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  padding: 10px;
+  border-left: 4px solid var(--accent-bus);
+}
+
+.bus-stop-title {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ========== TOUS LES BUS ========== */
+.allbus-section {
+  background: linear-gradient(135deg, #0a1626 0%, #1a2d45 100%);
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.all-bus {
+  display: grid;
+  gap: 8px;
+}
+
+.bus-line-group {
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  padding: 8px;
+  border-left: 3px solid var(--accent-bus);
+  font-size: 12px;
+}
+
+.bus-line-header {
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bus-destinations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.bus-dest-item {
+  background: rgba(255,255,255,0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* ========== MINUTES ROW ========== */
+.minutes-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.minute-col {
+  flex: 1;
+  min-width: 60px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.minute-col:hover {
+  background: rgba(43,167,217,0.2);
+  border-color: var(--accent);
+}
+
+.time-box {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.time-cancelled {
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.time-delay {
+  color: var(--warning);
+  font-size: 12px;
+}
+
+.time-imminent {
+  color: var(--success);
+  font-weight: 700;
+  animation: pulse 1s infinite;
+}
+
+.time-estimated {
+  color: var(--text-primary);
+  font-size: 12px;
+}
+
+.time-last {
+  color: var(--danger);
+  font-size: 12px;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* ========== INFOS ANNEXES ========== */
+.annex-section {
+  background: linear-gradient(135deg, #0a1626 0%, #1a2d45 100%);
+}
+
+.annex-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.annex-block {
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  padding: 12px;
+  border-left: 4px solid var(--accent);
+}
+
+.annex-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.velib-list div,
+.weather-info div {
+  font-size: 13px;
+  margin: 6px 0;
+  color: var(--text-primary);
+}
+
+.velib-list strong,
+.weather-info strong {
+  color: var(--text-secondary);
+}
+
+#weather-emoji {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+/* ========== COURSES & TRAFIC ========== */
+.info-section {
+  background: linear-gradient(135deg, #0a1626 0%, #1a2d45 100%);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.info-block {
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  padding: 12px;
+  border-left: 4px solid var(--accent);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.info-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.courses-info div,
+.road-list div {
+  font-size: 12px;
+  padding: 6px 0;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.courses-info div:last-child,
+.road-list div:last-child {
+  border-bottom: none;
+}
+
+.courses-block {
+  border-left-color: #ffc107;
+}
+
+.traffic-block {
+  border-left-color: #ff9800;
+}
+
+/* ========== NEWS SECTION ========== */
+.news-section {
+  background: linear-gradient(135deg, #0a1626 0%, #1a2d45 100%);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
 .news-ticker {
-  height: 200px;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .news-item {
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-  font-size: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
 }
 
-/* Courses */
-.course-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 12px;
-  margin: 6px 0;
-  background: #fff8e1;
-  border-radius: 6px;
-  border-left: 3px solid #ffc107;
+.news-item:last-child {
+  border-bottom: none;
 }
 
-/* Loading/Error */
+.news-item strong {
+  color: var(--accent);
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* ========== LOADING & ERROR ========== */
 .loading {
   text-align: center;
-  color: #666;
+  color: var(--text-secondary);
   font-style: italic;
-  padding: 40px 0;
-}
-
-.error {
-  text-align: center;
-  color: #e74c3c;
-  padding: 20px;
-  background: #ffebee;
-  border-radius: 6px;
-}
-
-/* Footer */
-footer {
-  background: #34495e;
-  color: #bdc3c7;
-  text-align: center;
-  padding: 15px;
+  padding: 20px 0;
   font-size: 12px;
+}
+
+.alert {
+  background: rgba(217, 42, 42, 0.2);
+  border-left: 4px solid var(--danger);
+  padding: 8px;
+  border-radius: 4px;
+  color: var(--danger);
+  font-size: 12px;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: #0a0f1a;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 11px;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-top: 2px solid var(--border);
 }
 
-/* Responsive */
+footer p {
+  margin: 0;
+}
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2ba7d9;
+}
+
+/* ========== RESPONSIVE ========== */
 @media (max-width: 1080px) {
   body {
     width: 100vw;
     height: 100vh;
   }
-  .dashboard-grid {
+  
+  .rer-container,
+  .bus-container,
+  .annex-grid,
+  .info-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(7, auto);
-    height: auto;
   }
 }
