@@ -25,8 +25,8 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      width: 1080px;
-      height: 1920px;
+      width: 100%;
+      height: 100vh;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -36,12 +36,13 @@
     .zone-a {
       background: linear-gradient(135deg, #0f2847 0%, #132f52 100%);
       border-bottom: 3px solid var(--accent);
-      padding: 16px 20px;
+      padding: 12px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-shrink: 0;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      height: 60px;
     }
     
     .zone-a-left {
@@ -51,16 +52,17 @@
     }
     
     .logo {
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       background: linear-gradient(135deg, var(--accent), #ff8c00);
-      border-radius: 10px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 24px;
+      font-size: 22px;
       color: #000;
+      flex-shrink: 0;
     }
     
     .zone-a-title {
@@ -70,13 +72,13 @@
     }
     
     .zone-a-title h1 {
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 700;
       margin: 0;
     }
     
     .zone-a-title p {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--text-sec);
       margin: 0;
     }
@@ -85,44 +87,53 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 4px;
+      gap: 2px;
     }
     
     #heure {
       font-family: 'Courier New', monospace;
-      font-size: 32px;
+      font-size: 26px;
       font-weight: 700;
       color: var(--accent);
     }
     
     .zone-a-meta {
-      font-size: 12px;
+      font-size: 10px;
       color: var(--text-sec);
+    }
+    
+    /* ===== CONTAINER CENTRAL ===== */
+    .main-container {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+      gap: 0;
     }
     
     /* ===== ZONE B: CŒUR TRANSPORT ===== */
     .zone-b {
       flex: 1;
       overflow-y: auto;
-      padding: 20px;
+      padding: 12px 16px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
     }
     
     .stop-block {
       background: var(--panel);
-      border-radius: 12px;
+      border-radius: 10px;
       border-left: 5px solid var(--accent);
-      padding: 16px;
+      padding: 12px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      flex-shrink: 0;
     }
     
     .stop-title {
-      font-size: 16px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--accent);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -130,13 +141,13 @@
     .lines-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
     
     .line-item {
       background: var(--chip);
       border-radius: 8px;
-      padding: 10px;
+      padding: 8px;
       border-left: 3px solid var(--muted);
     }
     
@@ -144,24 +155,25 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     
     .line-badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: var(--muted);
       color: #fff;
       font-weight: 700;
-      font-size: 13px;
+      font-size: 12px;
+      flex-shrink: 0;
     }
     
     .line-name {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       color: var(--text);
     }
@@ -169,53 +181,54 @@
     .directions-group {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      padding-left: 48px;
+      gap: 5px;
+      padding-left: 44px;
     }
     
     .direction-item {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--text-sec);
-      padding: 6px 0;
     }
     
     .direction-label {
       font-weight: 600;
       color: var(--text);
+      display: block;
+      margin-bottom: 2px;
     }
     
     .passages {
       display: flex;
-      gap: 8px;
-      margin-top: 4px;
+      gap: 6px;
+      margin-top: 2px;
       flex-wrap: wrap;
     }
     
     .passage-box {
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 6px 10px;
+      border-radius: 5px;
+      padding: 5px 8px;
       text-align: center;
-      min-width: 70px;
+      min-width: 65px;
     }
     
     .passage-time {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 700;
       color: var(--text);
     }
     
     .passage-heure {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--text-sec);
-      margin-top: 2px;
+      margin-top: 1px;
     }
     
     .passage-status {
-      font-size: 9px;
-      margin-top: 3px;
-      padding: 2px 4px;
+      font-size: 8px;
+      margin-top: 2px;
+      padding: 1px 3px;
       border-radius: 3px;
       font-weight: 600;
       text-transform: uppercase;
@@ -229,36 +242,46 @@
     .no-passage {
       color: var(--muted);
       font-style: italic;
-      font-size: 11px;
+      font-size: 10px;
     }
     
-    /* ===== ZONE C: VUE EXHAUSTIVE ===== */
+    /* ===== ZONE C + D: SIDEBAR DROIT ===== */
+    .right-sidebar {
+      width: 280px;
+      border-left: 2px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    
     .zone-c {
       background: var(--panel);
-      border-top: 2px solid var(--border);
-      padding: 12px 20px;
-      max-height: 180px;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 12px;
       overflow-y: auto;
+      flex: 0.4;
     }
     
     .zone-c-title {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--accent);
       margin-bottom: 8px;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
     
-    .all-bus-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      font-size: 11px;
+    .all-bus-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 10px;
     }
     
     .bus-item {
       background: rgba(255, 255, 255, 0.05);
-      padding: 6px 8px;
+      padding: 6px;
       border-radius: 4px;
       border-left: 2px solid var(--accent);
     }
@@ -266,52 +289,81 @@
     .bus-item-line {
       font-weight: 700;
       color: var(--accent);
+      margin-bottom: 2px;
     }
     
     .bus-item-dests {
       color: var(--text-sec);
-      margin-top: 2px;
+      font-size: 9px;
+      line-height: 1.3;
     }
     
-    /* ===== ZONE D: MODULES CONTEXTUELS ===== */
     .zone-d {
       background: var(--panel);
-      border-top: 2px solid var(--border);
-      padding: 12px 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      flex-shrink: 0;
+      padding: 10px 12px;
+      overflow-y: auto;
+      flex: 0.6;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
     
     .module {
       background: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      padding: 10px;
-      border-left: 3px solid var(--accent);
+      border-radius: 6px;
+      padding: 8px;
+      border-left: 2px solid var(--accent);
     }
     
     .module-title {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       color: var(--accent);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       text-transform: uppercase;
+      letter-spacing: 0.3px;
     }
     
     .module-content {
-      font-size: 12px;
+      font-size: 10px;
       color: var(--text);
       line-height: 1.4;
     }
     
     .module-content div {
-      margin: 3px 0;
+      margin: 2px 0;
+    }
+    
+    .module-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+    }
+    
+    .traffic-item {
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 9px;
+      color: var(--text-sec);
+    }
+    
+    .traffic-item:last-child {
+      border-bottom: none;
+    }
+    
+    .traffic-status-ok {
+      color: var(--ok);
+      font-weight: 600;
+    }
+    
+    .traffic-status-warning {
+      color: var(--warning);
+      font-weight: 600;
     }
     
     /* Scrollbar */
     ::-webkit-scrollbar {
-      width: 6px;
+      width: 5px;
     }
     ::-webkit-scrollbar-track {
       background: transparent;
@@ -337,7 +389,7 @@
       <div class="logo">VH</div>
       <div class="zone-a-title">
         <h1>Dashboard Mobilité</h1>
-        <p>Joinville-le-Pont • Vincennes • Breuil</p>
+        <p>Joinville • Vincennes • Breuil</p>
       </div>
     </div>
     <div class="zone-a-right">
@@ -346,31 +398,58 @@
     </div>
   </div>
 
-  <!-- ZONE B: CŒUR TRANSPORT -->
-  <div class="zone-b" id="zone-b"></div>
+  <!-- MAIN CONTAINER: ZONE B + C + D -->
+  <div class="main-container">
+    
+    <!-- ZONE B: CŒUR TRANSPORT -->
+    <div class="zone-b" id="zone-b"></div>
 
-  <!-- ZONE C: VUE EXHAUSTIVE -->
-  <div class="zone-c">
-    <div class="zone-c-title">📍 Tous les Bus - Joinville (Vue Complète)</div>
-    <div class="all-bus-grid" id="allBusGrid"></div>
-  </div>
+    <!-- RIGHT SIDEBAR: ZONES C + D -->
+    <div class="right-sidebar">
+      
+      <!-- ZONE C: VUE EXHAUSTIVE BUSES -->
+      <div class="zone-c">
+        <div class="zone-c-title">📋 Tous les Bus</div>
+        <div class="all-bus-list" id="allBusList"></div>
+      </div>
 
-  <!-- ZONE D: CONTEXTE -->
-  <div class="zone-d">
-    <div class="module">
-      <div class="module-title">🚲 Vélib'</div>
-      <div class="module-content">
-        <div>Vincennes: <strong id="velib-v">--</strong></div>
-        <div>Breuil: <strong id="velib-b">--</strong></div>
+      <!-- ZONE D: CONTEXTE -->
+      <div class="zone-d">
+        
+        <div class="module">
+          <div class="module-title">🚲 Vélib'</div>
+          <div class="module-content">
+            <div class="module-line">
+              <span>Vincennes</span>
+              <strong id="velib-v">--</strong>
+            </div>
+            <div class="module-line">
+              <span>Breuil</span>
+              <strong id="velib-b">--</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="module">
+          <div class="module-title">🌤️ Météo</div>
+          <div class="module-content">
+            <div class="module-line">
+              <span id="weather-emoji">--</span>
+              <span id="weather-desc">--</span>
+            </div>
+            <div><strong id="weather-temp">--</strong></div>
+          </div>
+        </div>
+
+        <div class="module">
+          <div class="module-title">⚠️ Trafic</div>
+          <div class="module-content" id="traffic-content"></div>
+        </div>
+
       </div>
+
     </div>
-    <div class="module">
-      <div class="module-title">🌤️ Météo</div>
-      <div class="module-content">
-        <div><span id="weather-emoji">--</span> <strong id="weather-desc">--</strong></div>
-        <div id="weather-temp">--</div>
-      </div>
-    </div>
+
   </div>
 
   <script>
@@ -379,16 +458,16 @@
     
     // === CONFIG ===
     const COLORS = {
-      'STIF:Line::C01742:': '#E41E26', // RER A
-      'STIF:Line::C02251:': '#0071bc', // 77
-      'STIF:Line::C01219:': '#6E491E', // 201
-      'STIF:Line::C01130:': '#f0a500', // 101
-      'STIF:Line::C01135:': '#e4002b', // 106
-      'STIF:Line::C01137:': '#d10073', // 108
-      'STIF:Line::C01139:': '#642580', // 110
-      'STIF:Line::C01141:': '#ff5a00', // 112
-      'STIF:Line::C01260:': '#d9a300', // 281
-      'STIF:Line::C01399:': '#ff5a00'  // N33
+      'STIF:Line::C01742:': '#E41E26',
+      'STIF:Line::C02251:': '#0071bc',
+      'STIF:Line::C01219:': '#6E491E',
+      'STIF:Line::C01130:': '#f0a500',
+      'STIF:Line::C01135:': '#e4002b',
+      'STIF:Line::C01137:': '#d10073',
+      'STIF:Line::C01139:': '#642580',
+      'STIF:Line::C01141:': '#ff5a00',
+      'STIF:Line::C01260:': '#d9a300',
+      'STIF:Line::C01399:': '#ff5a00'
     };
     
     const LINES = [
@@ -448,7 +527,7 @@
             };
           });
         } catch(e) {
-          console.error('Fetch error:', e);
+          console.error('Fetch error for', line.name, ':', e);
         }
       }
       return [];
@@ -514,7 +593,7 @@
               
               const dirLabel = document.createElement('span');
               dirLabel.className = 'direction-label';
-              dirLabel.textContent = dest.substring(0, 40);
+              dirLabel.textContent = dest.substring(0, 35);
               dirItem.appendChild(dirLabel);
               
               const passages = document.createElement('div');
@@ -526,11 +605,11 @@
                 let statusClass = 'status-ok';
                 let statusText = 'OK';
                 if(m === null) { statusClass = 'status-muted'; statusText = 'N/A'; }
-                else if(d.status === 'cancelled') { statusClass = 'status-error'; statusText = 'ANNULÉ'; }
-                else if(d.status === 'delayed') { statusClass = 'status-warning'; statusText = 'RETARD'; }
-                else if(m < 2) { box.classList.add('imminent'); statusText = 'IMMINENT'; }
+                else if(d.status === 'cancelled') { statusClass = 'status-error'; statusText = 'ANNUL'; }
+                else if(d.status === 'delayed') { statusClass = 'status-warning'; statusText = 'RET'; }
+                else if(m < 2) { box.classList.add('imminent'); statusText = 'IMM'; }
                 
-                box.innerHTML = `<div class="passage-time">${m === null ? '–' : m + ' min'}</div><div class="passage-heure">${hhmm(d.time)}</div><div class="passage-status ${statusClass}">${statusText}</div>`;
+                box.innerHTML = `<div class="passage-time">${m === null ? '–' : m + 'm'}</div><div class="passage-heure">${hhmm(d.time)}</div><div class="passage-status ${statusClass}">${statusText}</div>`;
                 passages.appendChild(box);
               });
               dirItem.appendChild(passages);
@@ -547,11 +626,11 @@
     
     // === RENDER ZONE C ===
     async function renderZoneC() {
-      const grid = document.getElementById('allBusGrid');
-      grid.innerHTML = '';
+      const list = document.getElementById('allBusList');
+      list.innerHTML = '';
       
       for(const line of LINES) {
-        if(line.line.includes('C01742')) continue; // Skip RER A
+        if(line.line.includes('C01742')) continue;
         const deps = await fetchDepartures(line);
         const item = document.createElement('div');
         item.className = 'bus-item';
@@ -569,11 +648,11 @@
         destsDiv.textContent = dests.join(' • ') || 'Aucun passage';
         item.appendChild(destsDiv);
         
-        grid.appendChild(item);
+        list.appendChild(item);
       }
     }
     
-    // === MÉTÉO ===
+    // === MÉTEO ===
     async function refreshWeather() {
       try {
         const data = await fetch('https://api.open-meteo.com/v1/forecast?latitude=48.835&longitude=2.45&current_weather=true').then(r => r.json());
@@ -601,12 +680,46 @@
       }
     }
     
+    // === TRAFIC IDFM ===
+    async function refreshTraffic() {
+      const lines = ['STIF:Line::C01130:', 'STIF:Line::C01135:', 'STIF:Line::C01742:'];
+      const container = document.getElementById('traffic-content');
+      container.innerHTML = '<div class="traffic-item">Chargement...</div>';
+      
+      try {
+        const messages = [];
+        for(const lineRef of lines) {
+          const url = `${proxy}https://prim.iledefrance-mobilites.fr/marketplace/situation-exchange?LineRef=${enc(lineRef)}`;
+          try {
+            const res = await fetch(url);
+            if(res.ok) {
+              const json = await res.json();
+              const situations = json?.Siri?.ServiceDelivery?.SituationExchangeDelivery?.[0]?.Situations?.PtSituationElement || [];
+              situations.forEach(s => {
+                const summary = s?.Summary?.[0]?.value || s?.Description?.[0]?.value;
+                if(summary) messages.push(summary);
+              });
+            }
+          } catch(e) {}
+        }
+        
+        if(!messages.length) {
+          container.innerHTML = '<div class="traffic-item"><span class="traffic-status-ok">✓ Normal</span></div><div class="traffic-item">Pas d\'alerte détectée</div>';
+        } else {
+          container.innerHTML = messages.slice(0, 3).map(m => `<div class="traffic-item"><span class="traffic-status-warning">⚠ ${m.substring(0, 40)}</span></div>`).join('');
+        }
+      } catch(e) {
+        console.error('Traffic:', e);
+        container.innerHTML = '<div class="traffic-item">Données indisponibles</div>';
+      }
+    }
+    
     // === INIT ===
     setInterval(updateClock, 1000);
     updateClock();
     
     async function init() {
-      await Promise.all([renderZoneB(), renderZoneC(), refreshWeather(), refreshVelib()]);
+      await Promise.all([renderZoneB(), renderZoneC(), refreshWeather(), refreshVelib(), refreshTraffic()]);
       setLastUpdate();
     }
     
