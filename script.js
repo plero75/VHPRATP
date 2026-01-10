@@ -20,18 +20,26 @@ const DEFAULT_COLORS = {
   'STIF:Line::C01399:': '#ff5a00'  // Bus N33
 };
 
+// === STOPS CORRECTS ===
+const STOPS = {
+  RER_A: 'STIF:StopArea:SP:43135:', // Joinville-le-Pont (global)
+  BUS_77_HIPPO: 'STIF:StopPoint:Q:22452:',    // Hippodrome de Vincennes - Bus 77
+  BUS_201_BREUIL: 'STIF:StopPoint:Q:39406:', // École du Breuil - Bus 201
+  BUS_77_JOINVILLE: 'STIF:StopPoint:Q:22452:' // Joinville RER - Bus 77
+};
+
 // === CONFIGURATION LIGNES ===
 const LINES = [
-  { name: 'RER A', line: 'STIF:Line::C01742:', monitoring: ['STIF:StopArea:SP:43135:'], isRER: true },
-  { name: '77', line: 'STIF:Line::C02251:', monitoring: ['STIF:StopPoint:Q:22452:'] },
-  { name: '101', line: 'STIF:Line::C01130:', monitoring: ['STIF:StopPoint:Q:21252:'] },
-  { name: '106', line: 'STIF:Line::C01135:', monitoring: ['STIF:StopPoint:Q:27560:'] },
-  { name: '108', line: 'STIF:Line::C01137:', monitoring: ['STIF:StopPoint:Q:28032:'] },
-  { name: '110', line: 'STIF:Line::C01139:', monitoring: ['STIF:StopPoint:Q:28032:'] },
-  { name: '112', line: 'STIF:Line::C01141:', monitoring: ['STIF:StopPoint:Q:28065:', 'STIF:StopPoint:Q:39406:'] },
-  { name: '201', line: 'STIF:Line::C01219:', monitoring: ['STIF:StopPoint:Q:39406:', 'STIF:StopPoint:Q:22452:'] },
-  { name: '281', line: 'STIF:Line::C01260:', monitoring: ['STIF:StopPoint:Q:28033:'] },
-  { name: 'N33', line: 'STIF:Line::C01399:', monitoring: ['STIF:StopPoint:Q:39406:'] }
+  { name: 'RER A', line: 'STIF:Line::C01742:', monitoring: [STOPS.RER_A], isRER: true },
+  { name: '77', line: 'STIF:Line::C02251:', monitoring: [STOPS.BUS_77_JOINVILLE] },
+  { name: '101', line: 'STIF:Line::C01130:', monitoring: [STOPS.BUS_77_JOINVILLE] },
+  { name: '106', line: 'STIF:Line::C01135:', monitoring: [STOPS.BUS_77_JOINVILLE] },
+  { name: '108', line: 'STIF:Line::C01137:', monitoring: [STOPS.BUS_77_JOINVILLE] },
+  { name: '110', line: 'STIF:Line::C01139:', monitoring: [STOPS.BUS_77_JOINVILLE] },
+  { name: '112', line: 'STIF:Line::C01141:', monitoring: [STOPS.BUS_77_JOINVILLE] },
+  { name: '201', line: 'STIF:Line::C01219:', monitoring: [STOPS.BUS_201_BREUIL] },
+  { name: '281', line: 'STIF:Line::C01260:', monitoring: [STOPS.BUS_77_JOINVILLE] },
+  { name: 'N33', line: 'STIF:Line::C01399:', monitoring: [STOPS.BUS_77_JOINVILLE] }
 ];
 
 const VELIB_STATIONS = {
@@ -71,10 +79,13 @@ async function getLineColor(lineRef) {
 async function fetchJSON(url) {
   try {
     const res = await fetch(url);
-    if (!res.ok) return null;
+    if (!res.ok) {
+      console.warn('HTTP error:', res.status, url);
+      return null;
+    }
     return await res.json();
   } catch (e) {
-    console.error('fetchJSON:', e.message);
+    console.error('fetchJSON error:', e.message);
     return null;
   }
 }
@@ -84,6 +95,8 @@ async function fetchDepartures(line) {
   for (const m of line.monitoring) {
     const url = `${proxy}https://prim.iledefrance-mobilites.fr/marketplace/stop-monitoring?MonitoringRef=${enc(m)}&LineRef=${enc(line.line)}`;
     const json = await fetchJSON(url);
+    
+    if (!json) continue;
     
     const visits = json?.Siri?.ServiceDelivery?.StopMonitoringDelivery?.[0]?.MonitoredStopVisit || [];
     const filtered = visits.filter(v => v?.MonitoredVehicleJourney?.LineRef?.value === line.line);
@@ -98,7 +111,7 @@ async function fetchDepartures(line) {
         time: call?.ExpectedDepartureTime || call?.AimedDepartureTime || null,
         status: (call?.DepartureStatus || 'onTime').toLowerCase()
       };
-    });
+    }).slice(0, 4);
   }
   return [];
 }
@@ -107,27 +120,30 @@ async function fetchDepartures(line) {
 function renderDepartures(depList) {
   const wrap = document.createElement('div');
   wrap.className = 'minutes-row';
+  wrap.id = 'temp-' + Math.random();
   
-  if (!depList.length) {
+  if (!depList || !depList.length) {
     wrap.innerHTML = '<div class="loading">Aucun passage</div>';
     return wrap;
   }
   
-  const byDest = {};
-  depList.forEach(d => { (byDest[d.dest] ||= []).push(d); });
-  
-  Object.entries(byDest).slice(0, 4).forEach(([dest, deps]) => {
+  depList.forEach(d => {
     const box = document.createElement('div');
     box.className = 'minute-col';
-    const m = minutesUntil(deps[0].time);
+    const m = minutesUntil(d.time);
     let cls = 'time-estimated';
     
     if (m === null) cls = 'time-estimated';
-    else if (deps[0].status === 'cancelled') cls = 'time-cancelled';
-    else if (deps[0].status === 'delayed') cls = 'time-delay';
+    else if (d.status === 'cancelled') cls = 'time-cancelled';
+    else if (d.status === 'delayed') cls = 'time-delay';
+    else if (m === 0) cls = 'time-imminent';
     else if (m < 2) cls = 'time-imminent';
     
-    box.innerHTML = `<div class="time-box">${m === null ? '—' : m + ' min'}</div><div style="font-size:11px;color:#999">${hhmm(deps[0].time)}</div>`;
+    const timeText = m === null ? '—' : (m === 0 ? 'À quai' : m + ' min');
+    const hhmm_text = hhmm(d.time);
+    
+    box.innerHTML = `<div class="time-box">${timeText}</div><div style="font-size:11px;color:#999;margin-top:3px">${hhmm_text}</div>`;
+    box.className = `minute-col ${cls}`;
     wrap.appendChild(box);
   });
   
@@ -137,35 +153,37 @@ function renderDepartures(depList) {
 // === RENDER RER A ===
 async function renderRerA() {
   const line = LINES.find(l => l.name === 'RER A');
-  const deps = await fetchDepartures(line);
-  
-  // Séparer par direction
-  const paris = deps.filter(d => d.dest.includes('Paris') || d.dest.includes('Châtelet'));
-  const boissy = deps.filter(d => d.dest.includes('Boissy') || !d.dest.includes('Paris'));
-  
-  document.getElementById('rer-paris-minutes').replaceWith(renderDepartures(paris));
-  document.getElementById('rer-boissy-minutes').replaceWith(renderDepartures(boissy));
-}
-
-// === RENDER BUS HIPPODROME & BREUIL ===
-async function renderBusStop(stopId, lineRef, containerId) {
-  const line = LINES.find(l => l.line === lineRef);
   if (!line) return;
   
-  const url = `${proxy}https://prim.iledefrance-mobilites.fr/marketplace/stop-monitoring?MonitoringRef=${enc(stopId)}&LineRef=${enc(lineRef)}`;
-  const json = await fetchJSON(url);
+  const deps = await fetchDepartures(line);
   
-  const visits = json?.Siri?.ServiceDelivery?.StopMonitoringDelivery?.[0]?.MonitoredStopVisit || [];
-  const deps = visits.map(v => {
-    const call = v.MonitoredVehicleJourney?.MonitoredCall;
-    return {
-      dest: v.MonitoredVehicleJourney?.DestinationName?.[0]?.value || '–',
-      time: call?.ExpectedDepartureTime || call?.AimedDepartureTime || null,
-      status: (call?.DepartureStatus || 'onTime').toLowerCase()
-    };
-  });
+  // Séparer par direction simple (prendre les 4 premiers)
+  const paris = deps.slice(0, 2);
+  const boissy = deps.slice(2, 4);
   
-  const el = document.getElementById(containerId);
+  const parisDiv = document.getElementById('rer-paris-minutes');
+  const boissyDiv = document.getElementById('rer-boissy-minutes');
+  
+  if (parisDiv) parisDiv.replaceWith(renderDepartures(paris));
+  if (boissyDiv) boissyDiv.replaceWith(renderDepartures(boissy));
+}
+
+// === RENDER BUS SPECIFIC ===
+async function renderBusHippodrome() {
+  const line = LINES.find(l => l.name === '77');
+  if (!line) return;
+  
+  const deps = await fetchDepartures(line);
+  const el = document.getElementById('hippo-77-minutes');
+  if (el) el.replaceWith(renderDepartures(deps));
+}
+
+async function renderBusBreuil() {
+  const line = LINES.find(l => l.name === '201');
+  if (!line) return;
+  
+  const deps = await fetchDepartures(line);
+  const el = document.getElementById('breuil-minutes');
   if (el) el.replaceWith(renderDepartures(deps));
 }
 
@@ -180,7 +198,7 @@ async function renderAllBus() {
   wrap.className = 'all-bus';
   
   for (const line of LINES) {
-    if (line.isRER) continue; // Skip RER A
+    if (line.isRER) continue;
     
     const deps = await fetchDepartures(line);
     if (!deps.length) continue;
@@ -199,13 +217,11 @@ async function renderAllBus() {
     const destinations = document.createElement('div');
     destinations.className = 'bus-destinations';
     
-    const uniqueDests = [...new Set(deps.map(d => d.dest))];
-    uniqueDests.slice(0, 3).forEach(dest => {
+    deps.slice(0, 2).forEach(d => {
       const item = document.createElement('div');
       item.className = 'bus-dest-item';
-      const nextDep = deps.find(d => d.dest === dest);
-      const mins = minutesUntil(nextDep.time);
-      item.textContent = `${dest}: ${mins === null ? '—' : mins + ' min'}`;
+      const mins = minutesUntil(d.time);
+      item.textContent = `${d.dest.substring(0, 20)}: ${mins === null ? '—' : mins + ' min'}`;
       destinations.appendChild(item);
     });
     
@@ -214,10 +230,10 @@ async function renderAllBus() {
   }
   
   if (wrap.children.length === 0) {
-    wrap.innerHTML = '<div class="loading">Aucun passage disponible</div>';
+    wrap.innerHTML = '<div class="loading">Données indisponibles</div>';
   }
   
-  container.replaceChild(wrap, container.firstChild);
+  container.replaceWith(wrap);
 }
 
 // === METEO ===
@@ -272,7 +288,7 @@ async function refreshVelib() {
       
       const mech = st.mechanical_bikes || 0;
       const elec = st.ebike_bikes || 0;
-      el.textContent = `${mech + elec} dispo (${mech} mécano, ${elec} électrique)`;
+      el.textContent = `${mech + elec} dispo (${mech}m+${elec}é)`;
     } catch (e) {
       console.error('Velib error:', e);
     }
@@ -282,25 +298,33 @@ async function refreshVelib() {
 // === COURSES PMU ===
 async function refreshCourses() {
   try {
+    const list = document.getElementById('courses-list');
+    if (!list) return;
+    
+    list.innerHTML = '<div class="loading">Chargement...</div>';
+    
     const today = new Date().toISOString().slice(0, 10);
     const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
     const url = `https://www.letrot.com/stats/Evenement/GetEvenements?hippodrome=VINCENNES&startDate=${today}&endDate=${tomorrow}`;
     
-    const html = await fetch(url).then(r => r.text()).catch(() => '');
-    const matches = [...html.matchAll(/(\d{1,2}\s\w+\s\d{4}).*?Réunion\s*(\d+)/gis)];
+    const response = await fetch(url).catch(() => null);
+    if (!response) {
+      list.innerHTML = '<div class="loading">Indisponible</div>';
+      return;
+    }
     
-    const list = document.getElementById('courses-list');
-    if (!list) return;
+    const html = await response.text();
+    const matches = [...html.matchAll(/(\d{1,2}\s\w+\s\d{4}).*?Réunion\s*(\d+)/gis)];
     
     list.innerHTML = '';
     if (matches.length) {
-      matches.slice(0, 4).forEach(m => {
+      matches.slice(0, 2).forEach(m => {
         const div = document.createElement('div');
-        div.textContent = `${m[1]} — Réunion ${m[2]}`;
+        div.textContent = `${m[1]} - Réunion ${m[2]}`;
         list.appendChild(div);
       });
     } else {
-      list.innerHTML = '<div class="loading">Programme indisponible</div>';
+      list.innerHTML = '<div class="loading">Aucune course</div>';
     }
   } catch (e) {
     console.error('Courses error:', e);
@@ -314,7 +338,7 @@ async function refreshTraffic() {
   try {
     const list = document.getElementById('road-list');
     if (!list) return;
-    list.innerHTML = '<div class="loading">Trafic normal</div>';
+    list.innerHTML = '<div style="font-size:12px;color:#999;">Trafic fluide</div>';
   } catch (e) {
     console.error('Traffic error:', e);
   }
@@ -324,8 +348,10 @@ async function refreshTraffic() {
 async function refreshNews() {
   try {
     const url = 'https://www.francetvinfo.fr/titres.rss';
-    const xml = await fetch(url).then(r => r.text()).catch(() => '');
+    const response = await fetch(url).catch(() => null);
+    if (!response) throw new Error('No response');
     
+    const xml = await response.text();
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, 'text/xml');
     const items = doc.querySelectorAll('item');
@@ -334,15 +360,22 @@ async function refreshNews() {
     if (!ticker) return;
     
     ticker.innerHTML = '';
-    [...items].slice(0, 6).forEach(item => {
+    [...items].slice(0, 4).forEach(item => {
       const title = item.querySelector('title')?.textContent || '';
+      if (!title) return;
       const div = document.createElement('div');
       div.className = 'news-item';
       div.textContent = title;
       ticker.appendChild(div);
     });
+    
+    if (ticker.children.length === 0) {
+      ticker.innerHTML = '<div class="loading">Actualités indisponibles</div>';
+    }
   } catch (e) {
     console.error('News error:', e);
+    const ticker = document.getElementById('news-ticker');
+    if (ticker) ticker.innerHTML = '<div class="loading">Flux indisponible</div>';
   }
 }
 
@@ -352,8 +385,8 @@ async function initAll() {
   
   await Promise.allSettled([
     renderRerA(),
-    renderBusStop('STIF:StopPoint:Q:463641:', 'STIF:Line::C02251:', 'hippo-77-minutes'),
-    renderBusStop('STIF:StopPoint:Q:463644:', 'STIF:Line::C02251:', 'breuil-minutes'),
+    renderBusHippodrome(),
+    renderBusBreuil(),
     renderAllBus(),
     refreshWeather(),
     refreshVelib(),
@@ -369,8 +402,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initAll();
   setInterval(updateClock, 1000);
   setInterval(renderRerA, 30000);
-  setInterval(() => renderBusStop('STIF:StopPoint:Q:463641:', 'STIF:Line::C02251:', 'hippo-77-minutes'), 30000);
-  setInterval(() => renderBusStop('STIF:StopPoint:Q:463644:', 'STIF:Line::C02251:', 'breuil-minutes'), 30000);
+  setInterval(renderBusHippodrome, 30000);
+  setInterval(renderBusBreuil, 30000);
   setInterval(renderAllBus, 60000);
   setInterval(refreshVelib, 180000);
   setInterval(refreshWeather, 600000);
