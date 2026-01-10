@@ -1,106 +1,565 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Dashboard Transports - Hippodrome de Vincennes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Transports - Hippodrome Vincennes</title>
+<style>
+  :root{
+    --bg:#0b1b3f;
+    --panel:#10275f;
+    --chip:#061536;
+    --accent:#f5a623;
+    --ok:#0c8840;
+    --late:#d9b700;
+    --cancel:#d92a2a;
+    --soon:#c96a0a;
+    --muted:#2e394a;
+  }
+  *{box-sizing:border-box}
+  body{
+    font-family:'Segoe UI',Arial,sans-serif;
+    background:var(--bg);
+    color:#fff;
+    margin:0;
+    padding:20px;
+    width:1080px;
+    height:1920px;
+    overflow-y:auto;
+  }
+  
+  /* HEADER */
+  .header-container {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    padding-bottom:15px;
+    border-bottom:2px solid var(--accent);
+  }
+  .header-left {
+    display:flex;
+    align-items:center;
+    gap:15px;
+  }
+  .logo-placeholder {
+    width:60px;
+    height:55px;
+    background:#2ba7d9;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:20px;
+    color:white;
+  }
+  .header-left h1 {
+    margin:0;
+    font-size:24px;
+    font-weight:600;
+  }
+  .header-right {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:4px;
+  }
+  #heure{
+    text-align:right;
+    font-family:'Courier New',monospace;
+    color:var(--accent);
+    font-size:28px;
+    font-weight:bold;
+    margin:0;
+  }
+  .last-update {
+    font-size:11px;
+    color:#999;
+  }
+  
+  /* TITRE PRINCIPAL */
+  .main-title {
+    text-align:center;
+    font-size:20px;
+    font-weight:700;
+    color:var(--accent);
+    margin:20px 0 15px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+  }
+  
+  /* SECTIONS */
+  .section-title {
+    font-size:16px;
+    font-weight:700;
+    color:var(--accent);
+    margin:20px 0 12px;
+    text-transform:uppercase;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--panel);
+  }
+  
+  .lines-container {
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  
+  .line-block{
+    background:var(--panel);
+    border-radius:12px;
+    margin:0;
+    padding:14px 14px 10px;
+    box-shadow:0 2px 8px #11142863;
+  }
+  .head{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:8px;
+  }
+  .badge{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:20px;
+    font-weight:700;
+    color:#fff;
+    min-width:44px;
+    text-align:center;
+    font-size:14px;
+  }
+  .direction{
+    color:var(--accent);
+    font-size:1.05rem;
+    margin:8px 0 4px;
+    font-weight:600;
+  }
+  .times{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:6px;
+  }
+  .time-box{
+    background:var(--chip);
+    border-radius:9px;
+    padding:9px 10px;
+    min-width:92px;
+    text-align:center;
+    flex:1;
+    min-width:80px;
+  }
+  .minutes-line{
+    font-size:1.35rem;
+    font-weight:800;
+  }
+  .when{
+    opacity:.9;
+    font-size:.95rem;
+  }
+  .status{
+    margin-top:3px;
+    padding:2px 7px;
+    border-radius:6px;
+    font-size:.82rem;
+    color:#fff;
+    letter-spacing:.03em;
+  }
+  .onTime{background:var(--ok)}
+  .delayed{background:var(--late)}
+  .cancelled{background:var(--cancel)}
+  .imminent{background:var(--soon);animation:blink 1s infinite}
+  .none{background:var(--muted);font-style:italic}
+  .traffic{
+    margin-top:8px;
+    color:#f9b92a;
+    font-size:.95rem;
+    padding:8px;
+    background:rgba(217,180,0,0.1);
+    border-radius:6px;
+  }
+  .no-data{
+    color:#b7c2d1;
+    padding:10px;
+    text-align:center;
+    font-style:italic;
+  }
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.55}}
+  
+  /* ANNEXES */
+  .annex-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin:15px 0;
+  }
+  .annex-block {
+    background:var(--panel);
+    border-radius:10px;
+    padding:12px;
+    border-left:4px solid var(--accent);
+  }
+  .annex-title {
+    font-size:12px;
+    font-weight:700;
+    color:var(--accent);
+    margin-bottom:8px;
+    text-transform:uppercase;
+  }
+  .annex-content {
+    font-size:13px;
+    color:#fff;
+  }
+  .annex-content div {
+    margin:4px 0;
+  }
+  
+  /* NEWS */
+  .news-section {
+    background:var(--panel);
+    border-radius:10px;
+    padding:12px;
+    max-height:200px;
+    overflow-y:auto;
+    margin:15px 0;
+  }
+  .news-item {
+    font-size:12px;
+    color:#ccc;
+    padding:6px 0;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    line-height:1.4;
+  }
+  .news-item:last-child {
+    border-bottom:none;
+  }
+  
+  /* FOOTER */
+  footer {
+    text-align:center;
+    margin-top:20px;
+    padding-top:15px;
+    border-top:1px solid var(--panel);
+    font-size:10px;
+    color:#999;
+  }
+  
+  /* SCROLLBAR */
+  ::-webkit-scrollbar {
+    width:8px;
+  }
+  ::-webkit-scrollbar-track {
+    background:transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background:var(--accent);
+    border-radius:4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background:#f9c952;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <div class="header-left">
-      <div style="width:60px;height:55px;background:#2ba7d9;border-radius:6px;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:24px;">VH</div>
-      <h1>Dashboard Transports</h1>
+
+<!-- HEADER -->
+<div class="header-container">
+  <div class="header-left">
+    <div class="logo-placeholder">VH</div>
+    <h1>Dashboard Transports</h1>
+  </div>
+  <div class="header-right">
+    <div id="heure">--:--:--</div>
+    <div class="last-update" id="lastUpdate">Maj --:--</div>
+  </div>
+</div>
+
+<!-- TITRE PRINCIPAL -->
+<div class="main-title">🚆 Temps Réel - Joinville-le-Pont</div>
+
+<!-- LIGNES PRINCIPALES (RER A + BUS 77/201) -->
+<div id="linesContainer" class="lines-container"></div>
+
+<!-- INFOS ANNEXES -->
+<div class="section-title">📊 Infos Complémentaires</div>
+<div class="annex-grid">
+  <div class="annex-block">
+    <div class="annex-title">🚲 Vélib'</div>
+    <div class="annex-content">
+      <div><strong>Vincennes:</strong> <span id="velib-vincennes">--</span></div>
+      <div><strong>Breuil:</strong> <span id="velib-breuil">--</span></div>
     </div>
-    <div class="header-right">
-      <span id="clock">--:--</span>
-      <span id="lastUpdate" class="last-update">Maj --:--</span>
+  </div>
+  <div class="annex-block">
+    <div class="annex-title">🌤️ Météo</div>
+    <div class="annex-content">
+      <div><span id="weather-emoji">--</span> <span id="weather-desc">--</span></div>
+      <div><strong id="weather-temp">--</strong></div>
     </div>
-  </header>
+  </div>
+</div>
 
-  <div id="top-alert" class="top-status" style="display:none"></div>
-  <div id="top-news" class="top-news" style="display:none"></div>
+<!-- ACTUALITES -->
+<div class="section-title">📰 Actualités France Info</div>
+<div class="news-section" id="news-ticker"></div>
 
-  <!-- SECTION 1: RER A -->
-  <section class="main-section rer-section">
-    <div class="section-title">🚆 RER A – Joinville-le-Pont</div>
-    <div class="rer-container">
-      <div class="rer-direction">
-        <div class="direction-label">▼ Direction Paris</div>
-        <div id="rer-paris-minutes" class="minutes-row"></div>
-      </div>
-      <div class="rer-direction">
-        <div class="direction-label">▲ Direction Boissy-Saint-Léger</div>
-        <div id="rer-boissy-minutes" class="minutes-row"></div>
-      </div>
-    </div>
-  </section>
+<!-- FOOTER -->
+<footer>
+  <p>© Hippodrome de Vincennes – Données: Île-de-France Mobilités, RATP, SNCF, Open-Meteo, Opendata Paris, PMU</p>
+</footer>
 
-  <!-- SECTION 2: BUS PRINCIPAUX -->
-  <section class="main-section bus-section">
-    <div class="section-title">🚌 Bus – Hippodrome & École du Breuil</div>
-    <div class="bus-container">
-      <div class="bus-stop">
-        <div class="bus-stop-title">Bus 77 – Arrêt Hippodrome</div>
-        <div id="hippo-77-minutes" class="minutes-row"></div>
-      </div>
-      <div class="bus-stop">
-        <div class="bus-stop-title">Bus 77 & 201 – Arrêt École du Breuil</div>
-        <div id="breuil-minutes" class="minutes-row"></div>
-      </div>
-    </div>
-  </section>
+<script>
+const proxy = 'https://ratp-proxy.hippodrome-proxy42.workers.dev/?url=';
+const enc = encodeURIComponent;
 
-  <!-- SECTION 3: TOUS LES BUS JOINVILLE -->
-  <section class="main-section allbus-section">
-    <div class="section-title">🚏 Tous les Bus – Joinville-le-Pont (Vue Complète)</div>
-    <div id="joinville-all-bus" class="all-bus"></div>
-  </section>
+const DEFAULT_COLORS = {
+  'STIF:Line::C01742:':'#E41E26',
+  'STIF:Line::C02251:':'#0071bc',
+  'STIF:Line::C01219:':'#6E491E',
+  'STIF:Line::C01130:':'#f0a500',
+  'STIF:Line::C01135:':'#e4002b',
+  'STIF:Line::C01137:':'#d10073',
+  'STIF:Line::C01139:':'#642580',
+  'STIF:Line::C01141:':'#ff5a00',
+  'STIF:Line::C01260:':'#d9a300',
+  'STIF:Line::C01399:':'#ff5a00'
+};
 
-  <!-- SECTION 4: INFOS ANNEXES -->
-  <section class="main-section annex-section">
-    <div class="annex-grid">
-      <div class="annex-block velib-block">
-        <div class="annex-title">🚲 Vélib' disponibles</div>
-        <div class="velib-list">
-          <div><strong>Vincennes :</strong> <span id="velib-vincennes">—</span></div>
-          <div><strong>Breuil :</strong> <span id="velib-breuil">—</span></div>
-        </div>
-      </div>
-      <div class="annex-block weather-block">
-        <div class="annex-title">🌤️ Météo</div>
-        <div class="weather-info">
-          <div><span id="weather-emoji">🌤️</span> <span id="weather-desc">—</span></div>
-          <div><span id="weather-temp">—</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+const LINES = [
+  { name:'RER A', line:'STIF:Line::C01742:', monitoring:['STIF:StopArea:SP:43135:'] },
+  { name:'77',    line:'STIF:Line::C02251:', monitoring:['STIF:StopPoint:Q:22452:'] },
+  { name:'101',   line:'STIF:Line::C01130:', monitoring:['STIF:StopPoint:Q:21252:'] },
+  { name:'106',   line:'STIF:Line::C01135:', monitoring:['STIF:StopPoint:Q:27560:'] },
+  { name:'108',   line:'STIF:Line::C01137:', monitoring:['STIF:StopPoint:Q:28032:'] },
+  { name:'110',   line:'STIF:Line::C01139:', monitoring:['STIF:StopPoint:Q:28032:'] },
+  { name:'112',   line:'STIF:Line::C01141:', monitoring:['STIF:StopPoint:Q:28065:','STIF:StopPoint:Q:39406:'] },
+  { name:'201',   line:'STIF:Line::C01219:', monitoring:['STIF:StopPoint:Q:39406:','STIF:StopPoint:Q:22452:'] },
+  { name:'281',   line:'STIF:Line::C01260:', monitoring:['STIF:StopPoint:Q:28033:'] },
+  { name:'N33',   line:'STIF:Line::C01399:', monitoring:['STIF:StopPoint:Q:39406:'] }
+];
 
-  <!-- SECTION 5: COURSES & TRAFIC -->
-  <section class="main-section info-section">
-    <div class="info-grid">
-      <div class="info-block courses-block">
-        <div class="info-title">🏇 Prochaines Courses</div>
-        <div id="courses-list" class="courses-info"><div class="loading">Chargement…</div></div>
-      </div>
-      <div class="info-block traffic-block">
-        <div class="info-title">🛣️ Trafic Routier</div>
-        <div id="road-list" class="road-list"><div class="loading">Chargement…</div></div>
-      </div>
-    </div>
-  </section>
+function updateHeure(){
+  const n=new Date();
+  document.getElementById('heure').textContent = n.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+}
+setInterval(updateHeure,950);
+updateHeure();
 
-  <!-- SECTION 6: ACTUALITÉS -->
-  <section class="main-section news-section">
-    <div class="section-title">📰 Actualités – France Info</div>
-    <div id="news-ticker" class="news-ticker"></div>
-  </section>
+function setLastUpdate() {
+  const el = document.getElementById('lastUpdate');
+  if(el) el.textContent = `Maj ${new Date().toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}`;
+}
 
-  <footer>
-    <p>© Hippodrome de Vincennes – Données: Île-de-France Mobilités, RATP, SNCF, Open‑Meteo, Opendata Paris, PMU</p>
-  </footer>
+function minutesUntil(dateStr){ if(!dateStr) return null; const now=new Date(); const t=new Date(dateStr); return Math.max(0,Math.round((t-now)/60000)); }
+function hhmm(dateStr){ if(!dateStr) return '—'; const d=new Date(dateStr); return d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}); }
 
-  <script src="script.js"></script>
+async function getLineColor(lineRef){
+  return DEFAULT_COLORS[lineRef] || '#546e7a';
+}
+
+async function fetchDepartures(line){
+  for(const m of line.monitoring){
+    const url = `${proxy}https://prim.iledefrance-mobilites.fr/marketplace/stop-monitoring?MonitoringRef=${enc(m)}&LineRef=${enc(line.line)}`;
+    try {
+      const res = await fetch(url);
+      if(!res.ok) continue;
+      const json = await res.json();
+
+      const visits = json?.Siri?.ServiceDelivery
+        ?.StopMonitoringDelivery?.[0]
+        ?.MonitoredStopVisit || [];
+
+      const filtered = visits.filter(v =>
+        v?.MonitoredVehicleJourney?.LineRef?.value === line.line
+      );
+
+      if(!filtered.length) continue;
+
+      return filtered.map(v => {
+        const mvj = v.MonitoredVehicleJourney;
+        const call = mvj?.MonitoredCall;
+        return {
+          dest: mvj?.DestinationName?.[0]?.value || '–',
+          time: call?.ExpectedDepartureTime || call?.AimedDepartureTime || null,
+          status: (call?.DepartureStatus || 'onTime').toLowerCase()
+        };
+      });
+    } catch(e) {
+      console.error('Error fetching:', line.name, e);
+    }
+  }
+  return [];
+}
+
+async function fetchTraffic(lineRef){
+  const url1=`${proxy}https://prim.iledefrance-mobilites.fr/marketplace/general-message?LineRef=${enc(lineRef)}`;
+  const url2=`${proxy}https://prim.iledefrance-mobilites.fr/marketplace/situation-exchange?LineRef=${enc(lineRef)}`;
+  const messages=[];
+  try{
+    const r=await fetch(url1);
+    if(r.ok){
+      const j=await r.json();
+      (j?.Siri?.ServiceDelivery?.GeneralMessageDelivery||[])
+        .flatMap(d=>d.InfoMessage||[])
+        .forEach(m=>{
+          const txt=m?.InfoMessageText?.[0]?.value;
+          if(txt) messages.push(txt);
+        });
+    }
+  }catch{}
+  try{
+    const r=await fetch(url2);
+    if(r.ok){
+      const j=await r.json();
+      (j?.Siri?.ServiceDelivery?.SituationExchangeDelivery||[])
+        .flatMap(d=>d.Situations?.PtSituationElement||[])
+        .forEach(s=>{
+          const summary=s?.Summary?.[0]?.value;
+          const desc=s?.Description?.[0]?.value;
+          if(summary) messages.push(summary);
+          else if(desc) messages.push(desc);
+        });
+    }
+  }catch{}
+  return [...new Set(messages)];
+}
+
+function renderDepartures(depList){
+  const wrap=document.createElement('div');
+  if(!depList.length){
+    wrap.innerHTML = `<div class="no-data">Aucun passage disponible</div>`;
+    return wrap;
+  }
+  const byDest={};
+  depList.forEach(d=>{ (byDest[d.dest] ||= []).push(d); });
+  for(const dest in byDest){
+    const row=document.createElement('div');
+    row.style.display='flex';
+    row.style.alignItems='center';
+    row.style.justifyContent='space-between';
+    row.style.gap='12px';
+    row.style.margin='10px 0';
+
+    const dir=document.createElement('div');
+    dir.className='direction';
+    dir.textContent = dest.substring(0,30);
+    row.appendChild(dir);
+
+    const times=document.createElement('div');
+    times.style.display='flex';
+    times.style.gap='10px';
+
+    byDest[dest].slice(0,2).forEach(d=>{
+      const box=document.createElement('div');
+      box.className='time-box';
+      const m=minutesUntil(d.time);
+      let cls='onTime';
+      if(m===null) cls='none';
+      else if(d.status==='cancelled') cls='cancelled';
+      else if(d.status==='delayed') cls='delayed';
+      else if(m<2) cls='imminent';
+      box.innerHTML = `<div class="minutes-line">${m===null?'—':m+' min'}</div><div class="when">${hhmm(d.time)}</div><div class="status ${cls}">${cls.toUpperCase()}</div>`;
+      times.appendChild(box);
+    });
+
+    row.appendChild(times);
+    wrap.appendChild(row);
+  }
+  return wrap;
+}
+
+async function renderLine(line){
+  const container = document.getElementById('linesContainer');
+  const block = document.createElement('div'); block.className='line-block';
+  const [color, deps, traffic] = await Promise.all([
+    getLineColor(line.line),
+    fetchDepartures(line),
+    fetchTraffic(line.line)
+  ]);
+  const head = document.createElement('div'); head.className='head';
+  head.innerHTML = `<span class="badge" style="background:${color}">${line.name}</span>`;
+  block.appendChild(head);
+  block.appendChild(renderDepartures(deps));
+  if(traffic.length){
+    const t=document.createElement('div'); t.className='traffic'; t.textContent = '⚠️ '+traffic.join(' | ');
+    block.appendChild(t);
+  }
+  container.appendChild(block);
+}
+
+async function refreshAll(){
+  const root=document.getElementById('linesContainer');
+  root.innerHTML='';
+  for(const line of LINES){ await renderLine(line); }
+  setLastUpdate();
+}
+
+// Météo
+async function refreshWeather(){
+  try {
+    const url = 'https://api.open-meteo.com/v1/forecast?latitude=48.835&longitude=2.45&current_weather=true';
+    const data = await fetch(url).then(r=>r.json());
+    if(data?.current_weather) {
+      const {temperature, weathercode} = data.current_weather;
+      const codes = {
+        0:{e:'☀️',d:'Ensoleillé'},1:{e:'🌤️',d:'Dégagé'},2:{e:'⛅',d:'Nuageux'},3:{e:'☁️',d:'Couvert'},
+        45:{e:'🌫️',d:'Brouillard'},61:{e:'🌦️',d:'Pluie'},80:{e:'⛈️',d:'Averses'}
+      };
+      const info = codes[weathercode] || codes[0];
+      document.getElementById('weather-emoji').textContent = info.e;
+      document.getElementById('weather-desc').textContent = info.d;
+      document.getElementById('weather-temp').textContent = Math.round(temperature)+'°C';
+    }
+  } catch(e) { console.error('Weather error:', e); }
+}
+
+// Vélib'
+async function refreshVelib(){
+  const stations = {VINCENNES:'12163', BREUIL:'12128'};
+  for(const [key, id] of Object.entries(stations)) {
+    try {
+      const url = `https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/velib-disponibilite-en-temps-reel/records?where=stationcode%3D${id}&limit=1`;
+      const data = await fetch(url).then(r=>r.json());
+      const st = data?.results?.[0];
+      const el = document.getElementById(`velib-${key.toLowerCase()}`);
+      if(el) el.textContent = st ? (st.mechanical_bikes||0)+(st.ebike_bikes||0)+' dispo' : '--';
+    } catch(e) { console.error('Velib error:', e); }
+  }
+}
+
+// News
+async function refreshNews(){
+  try {
+    const xml = await fetch('https://www.francetvinfo.fr/titres.rss').then(r=>r.text());
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xml, 'text/xml');
+    const ticker = document.getElementById('news-ticker');
+    ticker.innerHTML = '';
+    [...doc.querySelectorAll('item')].slice(0,4).forEach(item=>{
+      const title = item.querySelector('title')?.textContent || '';
+      if(title) {
+        const div = document.createElement('div');
+        div.className = 'news-item';
+        div.textContent = title;
+        ticker.appendChild(div);
+      }
+    });
+  } catch(e) { console.error('News error:', e); }
+}
+
+// Init
+refreshAll();
+refreshWeather();
+refreshVelib();
+refreshNews();
+
+setInterval(refreshAll, 60000);
+setInterval(refreshWeather, 600000);
+setInterval(refreshVelib, 180000);
+setInterval(refreshNews, 600000);
+</script>
+
 </body>
 </html>
