@@ -3,8 +3,13 @@ name: Update GTFS Static
 
 on:
   schedule:
-    - cron: '30 3 * * *'  # tous les jours à 03h30
+    - cron: '30 22 * * *'  # vers 00h30 à Paris en heure d'été
+    - cron: '30 2 * * *'   # seconde passe de sécurité dans la nuit
   workflow_dispatch:
+  push:
+    paths:
+      - 'script/update-gtfs.py'
+      - '.github/workflows/update-gtfs.yml'
 
 jobs:
   build:
@@ -24,5 +29,5 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add static/horaires_export.json
-          git commit -m "🔄 Mise à jour GTFS"
+          git diff --cached --quiet || git commit -m "🔄 Mise à jour GTFS"
           git push
