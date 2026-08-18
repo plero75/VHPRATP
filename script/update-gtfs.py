@@ -15,7 +15,9 @@ TARGETS = [
 ]
 
 today = datetime.now().date()
-days = [today + timedelta(days=i) for i in range(1)]
+# Aujourd'hui + les deux jours suivants : permet au dashboard d'annoncer
+# l'heure de reprise après la fin du service, y compris avant la MAJ suivante.
+days = [today + timedelta(days=i) for i in range(3)]
 
 resp = requests.get(GTFS_URL)
 z = zipfile.ZipFile(BytesIO(resp.content))
