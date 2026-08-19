@@ -14,23 +14,24 @@ TARGETS = [
     {"nom": "Joinville-le-Pont", "parent_station": "IDFM:70640", "route_id": "STIF:Line::C01742:", "ligne": "RER A"},
 ]
 
+WEEKDAY_COLUMNS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+
 today = datetime.now().date()
-# Aujourd'hui + les deux jours suivants : permet au dashboard d'annoncer
-# l'heure de reprise après la fin du service, y compris avant la MAJ suivante.
+# Aujourd'hui + les deux jours suivants : premier/dernier passage et reprise
+# du lendemain disponibles avant même le changement de date.
 days = [today + timedelta(days=i) for i in range(3)]
 
-resp = requests.get(GTFS_URL)
+resp = requests.get(GTFS_URL, timeout=60)
+resp.raise_for_status()
 z = zipfile.ZipFile(BytesIO(resp.content))
 
-stops = pd.read_csv(z.open("stops.txt"))
+stops = pd.read_csv(z.open("stops.txt"), low_memory=False)
 stop_times = pd.read_csv(z.open("stop_times.txt"), low_memory=False)
 trips = pd.read_csv(z.open("trips.txt"), low_memory=False)
-calendar = pd.read_csv(z.open("calendar.txt"))
-calendar_dates = pd.read_csv(z.open("calendar_dates.txt")) if "calendar_dates.txt" in z.namelist() else pd.DataFrame()
-routes = pd.read_csv(z.open("routes.txt"))
+calendar = pd.read_csv(z.open("calendar.txt"), low_memory=False)
+calendar_dates = pd.read_csv(z.open("calendar_dates.txt"), low_memory=False) if "calendar_dates.txt" in z.namelist() else pd.DataFrame()
 
 result = {}
-bus_gare_cache = {}
 
 for target in TARGETS:
     nom = target["nom"]
@@ -38,65 +39,73 @@ for target in TARGETS:
     route_id = target["route_id"]
     ligne = target["ligne"]
 
-    stop_ids = stops[stops['parent_station'] == parent_station]['stop_id'].tolist()
-    if parent_station in stops['stop_id'].values:
+    stop_ids = stops[stops["parent_station"] == parent_station]["stop_id"].astype(str).tolist()
+    if parent_station in stops["stop_id"].astype(str).values:
         stop_ids.append(parent_station)
+    stop_ids = list(dict.fromkeys(stop_ids))
 
-    trips_line = trips[trips['route_id'] == route_id]
+    trips_line = trips[trips["route_id"].astype(str) == route_id].copy()
 
-    if nom not in result:
-        result[nom] = {}
-    if ligne not in result[nom]:
-        result[nom][ligne] = {}
+    result.setdefault(nom, {}).setdefault(ligne, {})
 
     for day in days:
         day_str = day.strftime("%Y-%m-%d")
-        dow = day.weekday()
+        weekday_col = WEEKDAY_COLUMNS[day.weekday()]
         active_service_ids = []
+
         for _, row in calendar.iterrows():
-            start = datetime.strptime(str(row['start_date']), "%Y%m%d").date()
-            end = datetime.strptime(str(row['end_date']), "%Y%m%d").date()
-            if not (start <= day <= end):
-                continue
-            if dow < 5 and row['monday']: active_service_ids.append(row['service_id'])
-            if dow == 5 and row['saturday']: active_service_ids.append(row['service_id'])
-            if dow == 6 and row['sunday']: active_service_ids.append(row['service_id'])
+            start = datetime.strptime(str(int(row["start_date"])), "%Y%m%d").date()
+            end = datetime.strptime(str(int(row["end_date"])), "%Y%m%d").date()
+            if start <= day <= end and int(row.get(weekday_col, 0)) == 1:
+                active_service_ids.append(row["service_id"])
+
         if not calendar_dates.empty:
-            today_exceptions = calendar_dates[calendar_dates['date'] == int(day.strftime("%Y%m%d"))]
-            for _, ex in today_exceptions.iterrows():
-                if ex['exception_type'] == 1 and ex['service_id'] not in active_service_ids:
-                    active_service_ids.append(ex['service_id'])
-                if ex['exception_type'] == 2 and ex['service_id'] in active_service_ids:
-                    active_service_ids.remove(ex['service_id'])
+            day_num = int(day.strftime("%Y%m%d"))
+            exceptions = calendar_dates[calendar_dates["date"] == day_num]
+            for _, ex in exceptions.iterrows():
+                sid = ex["service_id"]
+                if int(ex["exception_type"]) == 1 and sid not in active_service_ids:
+                    active_service_ids.append(sid)
+                elif int(ex["exception_type"]) == 2 and sid in active_service_ids:
+                    active_service_ids.remove(sid)
 
-        trips_today = trips_line[trips_line['service_id'].isin(active_service_ids)]
-        trip_ids_today = trips_today['trip_id'].tolist()
-
+        trips_today = trips_line[trips_line["service_id"].isin(active_service_ids)].copy()
+        trip_ids_today = set(trips_today["trip_id"].astype(str))
         horaires_today = []
 
-        for trip_id in trip_ids_today:
-            stops_this_trip = stop_times[(stop_times['trip_id'] == trip_id) & (stop_times['stop_id'].isin(stop_ids))]
-            for _, st in stops_this_trip.iterrows():
-                time_str = st['departure_time'][:5]
-                stop_seq = st['stop_sequence']
-                dest = trips_today[trips_today['trip_id'] == trip_id]['trip_headsign'].values[0] if 'trip_headsign' in trips_today.columns else "?"
-                remaining = stop_times[(stop_times['trip_id'] == trip_id) & (stop_times['stop_sequence'] > stop_seq)]
-                if ligne.startswith("RER"):
-                    remaining_stops = stops[stops['stop_id'].isin(remaining['stop_id'])]['stop_name'].tolist()
-                else:
-                    if dest not in bus_gare_cache:
-                        bus_gare_cache[dest] = stops[stops['stop_id'].isin(remaining['stop_id'])]['stop_name'].tolist()
-                    remaining_stops = bus_gare_cache[dest]
-                horaires_today.append({
-                    "time": time_str,
-                    "destination": dest,
-                    "remaining_stops": remaining_stops
-                })
+        if trip_ids_today:
+            day_stop_times = stop_times[stop_times["trip_id"].astype(str).isin(trip_ids_today)].copy()
+            trip_lookup = trips_today.set_index(trips_today["trip_id"].astype(str))
 
-        horaires_today = sorted(horaires_today, key=lambda x: x["time"])
+            for trip_id in trip_ids_today:
+                trip_rows = day_stop_times[day_stop_times["trip_id"].astype(str) == trip_id].sort_values("stop_sequence")
+                stops_this_trip = trip_rows[trip_rows["stop_id"].astype(str).isin(stop_ids)]
+                if stops_this_trip.empty:
+                    continue
+
+                trip_info = trip_lookup.loc[trip_id]
+                dest = str(trip_info.get("trip_headsign", "?"))
+
+                for _, st in stops_this_trip.iterrows():
+                    time_str = str(st["departure_time"])[:5]
+                    stop_seq = st["stop_sequence"]
+                    remaining = trip_rows[trip_rows["stop_sequence"] > stop_seq]
+                    stop_name_map = stops.set_index(stops["stop_id"].astype(str))["stop_name"].to_dict()
+                    remaining_stops = [
+                        str(stop_name_map.get(str(stop_id), stop_id))
+                        for stop_id in remaining["stop_id"].tolist()
+                    ]
+
+                    horaires_today.append({
+                        "time": time_str,
+                        "destination": dest,
+                        "remaining_stops": remaining_stops,
+                    })
+
+        horaires_today.sort(key=lambda x: tuple(int(p) for p in x["time"].split(":")))
         result[nom][ligne][day_str] = horaires_today
 
 with open("static/horaires_export.json", "w", encoding="utf-8") as f:
     json.dump(result, f, indent=2, ensure_ascii=False)
 
-print("\u2705 Horaires GTFS exportés dans static/horaires_export.json")
+print("✅ Horaires GTFS exportés dans static/horaires_export.json")
