@@ -15359,6 +15359,13 @@
         },
         {
           "time": "17:20",
+          "destination": "Gare de Joinville-le-Pont",
+          "remaining_stops": [
+            "Gare de Joinville-le-Pont"
+          ]
+        },
+        {
+          "time": "17:20",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Hippodrome de Vincennes",
@@ -15378,13 +15385,6 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances",
             "Gare de Lyon"
-          ]
-        },
-        {
-          "time": "17:20",
-          "destination": "Gare de Joinville-le-Pont",
-          "remaining_stops": [
-            "Gare de Joinville-le-Pont"
           ]
         },
         {
@@ -15666,32 +15666,32 @@
         },
         {
           "time": "20:33",
-          "destination": "Gare de Lyon",
+          "destination": "Gare de Joinville-le-Pont",
           "remaining_stops": [
-            "Hippodrome de Vincennes",
-            "Plateau de Gravelle",
-            "Route de la Terrasse",
-            "Vacassy - Santé publique",
-            "Hôpitaux de Saint-Maurice",
-            "Gravelle - Jaurès",
-            "Gravelle - Liberté",
-            "Gravelle - Reuilly",
-            "Porte de Charenton",
-            "Porte de Reuilly",
-            "Wattignies - Gravelle",
-            "Nicolaï",
-            "Charenton - Wattignies",
-            "Dugommier",
-            "Gare de Bercy",
-            "Ministère de l'Economie et des Finances",
-            "Gare de Lyon"
+            "Gare de Joinville-le-Pont"
           ]
         },
         {
           "time": "20:33",
-          "destination": "Gare de Joinville-le-Pont",
+          "destination": "Gare de Lyon",
           "remaining_stops": [
-            "Gare de Joinville-le-Pont"
+            "Hippodrome de Vincennes",
+            "Plateau de Gravelle",
+            "Route de la Terrasse",
+            "Vacassy - Santé publique",
+            "Hôpitaux de Saint-Maurice",
+            "Gravelle - Jaurès",
+            "Gravelle - Liberté",
+            "Gravelle - Reuilly",
+            "Porte de Charenton",
+            "Porte de Reuilly",
+            "Wattignies - Gravelle",
+            "Nicolaï",
+            "Charenton - Wattignies",
+            "Dugommier",
+            "Gare de Bercy",
+            "Ministère de l'Economie et des Finances",
+            "Gare de Lyon"
           ]
         },
         {
@@ -15726,13 +15726,6 @@
         },
         {
           "time": "21:13",
-          "destination": "Gare de Joinville-le-Pont",
-          "remaining_stops": [
-            "Gare de Joinville-le-Pont"
-          ]
-        },
-        {
-          "time": "21:13",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Hippodrome de Vincennes",
@@ -15752,6 +15745,13 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances",
             "Gare de Lyon"
+          ]
+        },
+        {
+          "time": "21:13",
+          "destination": "Gare de Joinville-le-Pont",
+          "remaining_stops": [
+            "Gare de Joinville-le-Pont"
           ]
         },
         {
@@ -17251,6 +17251,13 @@
         },
         {
           "time": "17:20",
+          "destination": "Gare de Joinville-le-Pont",
+          "remaining_stops": [
+            "Gare de Joinville-le-Pont"
+          ]
+        },
+        {
+          "time": "17:20",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Hippodrome de Vincennes",
@@ -17270,13 +17277,6 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances",
             "Gare de Lyon"
-          ]
-        },
-        {
-          "time": "17:20",
-          "destination": "Gare de Joinville-le-Pont",
-          "remaining_stops": [
-            "Gare de Joinville-le-Pont"
           ]
         },
         {
@@ -17558,32 +17558,32 @@
         },
         {
           "time": "20:33",
-          "destination": "Gare de Lyon",
+          "destination": "Gare de Joinville-le-Pont",
           "remaining_stops": [
-            "Hippodrome de Vincennes",
-            "Plateau de Gravelle",
-            "Route de la Terrasse",
-            "Vacassy - Santé publique",
-            "Hôpitaux de Saint-Maurice",
-            "Gravelle - Jaurès",
-            "Gravelle - Liberté",
-            "Gravelle - Reuilly",
-            "Porte de Charenton",
-            "Porte de Reuilly",
-            "Wattignies - Gravelle",
-            "Nicolaï",
-            "Charenton - Wattignies",
-            "Dugommier",
-            "Gare de Bercy",
-            "Ministère de l'Economie et des Finances",
-            "Gare de Lyon"
+            "Gare de Joinville-le-Pont"
           ]
         },
         {
           "time": "20:33",
-          "destination": "Gare de Joinville-le-Pont",
+          "destination": "Gare de Lyon",
           "remaining_stops": [
-            "Gare de Joinville-le-Pont"
+            "Hippodrome de Vincennes",
+            "Plateau de Gravelle",
+            "Route de la Terrasse",
+            "Vacassy - Santé publique",
+            "Hôpitaux de Saint-Maurice",
+            "Gravelle - Jaurès",
+            "Gravelle - Liberté",
+            "Gravelle - Reuilly",
+            "Porte de Charenton",
+            "Porte de Reuilly",
+            "Wattignies - Gravelle",
+            "Nicolaï",
+            "Charenton - Wattignies",
+            "Dugommier",
+            "Gare de Bercy",
+            "Ministère de l'Economie et des Finances",
+            "Gare de Lyon"
           ]
         },
         {
@@ -17618,13 +17618,6 @@
         },
         {
           "time": "21:13",
-          "destination": "Gare de Joinville-le-Pont",
-          "remaining_stops": [
-            "Gare de Joinville-le-Pont"
-          ]
-        },
-        {
-          "time": "21:13",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Hippodrome de Vincennes",
@@ -17644,6 +17637,13 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances",
             "Gare de Lyon"
+          ]
+        },
+        {
+          "time": "21:13",
+          "destination": "Gare de Joinville-le-Pont",
+          "remaining_stops": [
+            "Gare de Joinville-le-Pont"
           ]
         },
         {
@@ -19143,6 +19143,13 @@
         },
         {
           "time": "17:20",
+          "destination": "Gare de Joinville-le-Pont",
+          "remaining_stops": [
+            "Gare de Joinville-le-Pont"
+          ]
+        },
+        {
+          "time": "17:20",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Hippodrome de Vincennes",
@@ -19162,13 +19169,6 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances",
             "Gare de Lyon"
-          ]
-        },
-        {
-          "time": "17:20",
-          "destination": "Gare de Joinville-le-Pont",
-          "remaining_stops": [
-            "Gare de Joinville-le-Pont"
           ]
         },
         {
@@ -19450,32 +19450,32 @@
         },
         {
           "time": "20:33",
-          "destination": "Gare de Lyon",
+          "destination": "Gare de Joinville-le-Pont",
           "remaining_stops": [
-            "Hippodrome de Vincennes",
-            "Plateau de Gravelle",
-            "Route de la Terrasse",
-            "Vacassy - Santé publique",
-            "Hôpitaux de Saint-Maurice",
-            "Gravelle - Jaurès",
-            "Gravelle - Liberté",
-            "Gravelle - Reuilly",
-            "Porte de Charenton",
-            "Porte de Reuilly",
-            "Wattignies - Gravelle",
-            "Nicolaï",
-            "Charenton - Wattignies",
-            "Dugommier",
-            "Gare de Bercy",
-            "Ministère de l'Economie et des Finances",
-            "Gare de Lyon"
+            "Gare de Joinville-le-Pont"
           ]
         },
         {
           "time": "20:33",
-          "destination": "Gare de Joinville-le-Pont",
+          "destination": "Gare de Lyon",
           "remaining_stops": [
-            "Gare de Joinville-le-Pont"
+            "Hippodrome de Vincennes",
+            "Plateau de Gravelle",
+            "Route de la Terrasse",
+            "Vacassy - Santé publique",
+            "Hôpitaux de Saint-Maurice",
+            "Gravelle - Jaurès",
+            "Gravelle - Liberté",
+            "Gravelle - Reuilly",
+            "Porte de Charenton",
+            "Porte de Reuilly",
+            "Wattignies - Gravelle",
+            "Nicolaï",
+            "Charenton - Wattignies",
+            "Dugommier",
+            "Gare de Bercy",
+            "Ministère de l'Economie et des Finances",
+            "Gare de Lyon"
           ]
         },
         {
@@ -19510,13 +19510,6 @@
         },
         {
           "time": "21:13",
-          "destination": "Gare de Joinville-le-Pont",
-          "remaining_stops": [
-            "Gare de Joinville-le-Pont"
-          ]
-        },
-        {
-          "time": "21:13",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Hippodrome de Vincennes",
@@ -19536,6 +19529,13 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances",
             "Gare de Lyon"
+          ]
+        },
+        {
+          "time": "21:13",
+          "destination": "Gare de Joinville-le-Pont",
+          "remaining_stops": [
+            "Gare de Joinville-le-Pont"
           ]
         },
         {
