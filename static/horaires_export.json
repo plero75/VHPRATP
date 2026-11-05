@@ -1518,6 +1518,14 @@
         },
         {
           "time": "19:35",
+          "destination": "Joinville-le-Pont - RER",
+          "remaining_stops": [
+            "École du Breuil",
+            "Gare de Joinville-le-Pont"
+          ]
+        },
+        {
+          "time": "19:35",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Plateau de Gravelle",
@@ -1536,14 +1544,6 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances",
             "Gare de Lyon"
-          ]
-        },
-        {
-          "time": "19:35",
-          "destination": "Joinville-le-Pont - RER",
-          "remaining_stops": [
-            "École du Breuil",
-            "Gare de Joinville-le-Pont"
           ]
         },
         {
@@ -3410,6 +3410,14 @@
         },
         {
           "time": "19:35",
+          "destination": "Joinville-le-Pont - RER",
+          "remaining_stops": [
+            "École du Breuil",
+            "Gare de Joinville-le-Pont"
+          ]
+        },
+        {
+          "time": "19:35",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Plateau de Gravelle",
@@ -3428,14 +3436,6 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances",
             "Gare de Lyon"
-          ]
-        },
-        {
-          "time": "19:35",
-          "destination": "Joinville-le-Pont - RER",
-          "remaining_stops": [
-            "École du Breuil",
-            "Gare de Joinville-le-Pont"
           ]
         },
         {
@@ -6314,21 +6314,6 @@
         },
         {
           "time": "08:41",
-          "destination": "Porte Dorée",
-          "remaining_stops": [
-            "Mortemart",
-            "Plaine de la Faluère",
-            "Stade Léo Lagrange",
-            "Pyramide - Parc Floral",
-            "Tourelle - Daumesnil",
-            "Demi Lune - Parc Zoologique",
-            "Alphand",
-            "Parc Zoologique",
-            "Porte Dorée"
-          ]
-        },
-        {
-          "time": "08:41",
           "destination": "Champigny - Diderot - La Plage",
           "remaining_stops": [
             "Gare de Joinville-le-Pont",
@@ -6342,6 +6327,21 @@
             "Diane",
             "Verdun - La Plage",
             "Champigny - Diderot - La Plage"
+          ]
+        },
+        {
+          "time": "08:41",
+          "destination": "Porte Dorée",
+          "remaining_stops": [
+            "Mortemart",
+            "Plaine de la Faluère",
+            "Stade Léo Lagrange",
+            "Pyramide - Parc Floral",
+            "Tourelle - Daumesnil",
+            "Demi Lune - Parc Zoologique",
+            "Alphand",
+            "Parc Zoologique",
+            "Porte Dorée"
           ]
         },
         {
@@ -8377,6 +8377,21 @@
         },
         {
           "time": "21:29",
+          "destination": "Porte Dorée",
+          "remaining_stops": [
+            "Mortemart",
+            "Plaine de la Faluère",
+            "Stade Léo Lagrange",
+            "Pyramide - Parc Floral",
+            "Tourelle - Daumesnil",
+            "Demi Lune - Parc Zoologique",
+            "Alphand",
+            "Parc Zoologique",
+            "Porte Dorée"
+          ]
+        },
+        {
+          "time": "21:29",
           "destination": "Champigny - Diderot - La Plage",
           "remaining_stops": [
             "Gare de Joinville-le-Pont",
@@ -8390,21 +8405,6 @@
             "Diane",
             "Verdun - La Plage",
             "Champigny - Diderot - La Plage"
-          ]
-        },
-        {
-          "time": "21:29",
-          "destination": "Porte Dorée",
-          "remaining_stops": [
-            "Mortemart",
-            "Plaine de la Faluère",
-            "Stade Léo Lagrange",
-            "Pyramide - Parc Floral",
-            "Tourelle - Daumesnil",
-            "Demi Lune - Parc Zoologique",
-            "Alphand",
-            "Parc Zoologique",
-            "Porte Dorée"
           ]
         },
         {
@@ -8488,21 +8488,6 @@
         },
         {
           "time": "22:41",
-          "destination": "Porte Dorée",
-          "remaining_stops": [
-            "Mortemart",
-            "Plaine de la Faluère",
-            "Stade Léo Lagrange",
-            "Pyramide - Parc Floral",
-            "Tourelle - Daumesnil",
-            "Demi Lune - Parc Zoologique",
-            "Alphand",
-            "Parc Zoologique",
-            "Porte Dorée"
-          ]
-        },
-        {
-          "time": "22:41",
           "destination": "Champigny - Diderot - La Plage",
           "remaining_stops": [
             "Gare de Joinville-le-Pont",
@@ -8516,6 +8501,21 @@
             "Diane",
             "Verdun - La Plage",
             "Champigny - Diderot - La Plage"
+          ]
+        },
+        {
+          "time": "22:41",
+          "destination": "Porte Dorée",
+          "remaining_stops": [
+            "Mortemart",
+            "Plaine de la Faluère",
+            "Stade Léo Lagrange",
+            "Pyramide - Parc Floral",
+            "Tourelle - Daumesnil",
+            "Demi Lune - Parc Zoologique",
+            "Alphand",
+            "Parc Zoologique",
+            "Porte Dorée"
           ]
         }
       ],
@@ -9130,21 +9130,6 @@
         },
         {
           "time": "08:41",
-          "destination": "Porte Dorée",
-          "remaining_stops": [
-            "Mortemart",
-            "Plaine de la Faluère",
-            "Stade Léo Lagrange",
-            "Pyramide - Parc Floral",
-            "Tourelle - Daumesnil",
-            "Demi Lune - Parc Zoologique",
-            "Alphand",
-            "Parc Zoologique",
-            "Porte Dorée"
-          ]
-        },
-        {
-          "time": "08:41",
           "destination": "Champigny - Diderot - La Plage",
           "remaining_stops": [
             "Gare de Joinville-le-Pont",
@@ -9158,6 +9143,21 @@
             "Diane",
             "Verdun - La Plage",
             "Champigny - Diderot - La Plage"
+          ]
+        },
+        {
+          "time": "08:41",
+          "destination": "Porte Dorée",
+          "remaining_stops": [
+            "Mortemart",
+            "Plaine de la Faluère",
+            "Stade Léo Lagrange",
+            "Pyramide - Parc Floral",
+            "Tourelle - Daumesnil",
+            "Demi Lune - Parc Zoologique",
+            "Alphand",
+            "Parc Zoologique",
+            "Porte Dorée"
           ]
         },
         {
@@ -11193,6 +11193,21 @@
         },
         {
           "time": "21:29",
+          "destination": "Porte Dorée",
+          "remaining_stops": [
+            "Mortemart",
+            "Plaine de la Faluère",
+            "Stade Léo Lagrange",
+            "Pyramide - Parc Floral",
+            "Tourelle - Daumesnil",
+            "Demi Lune - Parc Zoologique",
+            "Alphand",
+            "Parc Zoologique",
+            "Porte Dorée"
+          ]
+        },
+        {
+          "time": "21:29",
           "destination": "Champigny - Diderot - La Plage",
           "remaining_stops": [
             "Gare de Joinville-le-Pont",
@@ -11206,21 +11221,6 @@
             "Diane",
             "Verdun - La Plage",
             "Champigny - Diderot - La Plage"
-          ]
-        },
-        {
-          "time": "21:29",
-          "destination": "Porte Dorée",
-          "remaining_stops": [
-            "Mortemart",
-            "Plaine de la Faluère",
-            "Stade Léo Lagrange",
-            "Pyramide - Parc Floral",
-            "Tourelle - Daumesnil",
-            "Demi Lune - Parc Zoologique",
-            "Alphand",
-            "Parc Zoologique",
-            "Porte Dorée"
           ]
         },
         {
@@ -11304,21 +11304,6 @@
         },
         {
           "time": "22:41",
-          "destination": "Porte Dorée",
-          "remaining_stops": [
-            "Mortemart",
-            "Plaine de la Faluère",
-            "Stade Léo Lagrange",
-            "Pyramide - Parc Floral",
-            "Tourelle - Daumesnil",
-            "Demi Lune - Parc Zoologique",
-            "Alphand",
-            "Parc Zoologique",
-            "Porte Dorée"
-          ]
-        },
-        {
-          "time": "22:41",
           "destination": "Champigny - Diderot - La Plage",
           "remaining_stops": [
             "Gare de Joinville-le-Pont",
@@ -11332,6 +11317,21 @@
             "Diane",
             "Verdun - La Plage",
             "Champigny - Diderot - La Plage"
+          ]
+        },
+        {
+          "time": "22:41",
+          "destination": "Porte Dorée",
+          "remaining_stops": [
+            "Mortemart",
+            "Plaine de la Faluère",
+            "Stade Léo Lagrange",
+            "Pyramide - Parc Floral",
+            "Tourelle - Daumesnil",
+            "Demi Lune - Parc Zoologique",
+            "Alphand",
+            "Parc Zoologique",
+            "Porte Dorée"
           ]
         }
       ],
@@ -11784,49 +11784,34 @@
         },
         {
           "time": "11:10",
-          "destination": "Champigny - Diderot - La Plage",
+          "destination": "Porte Dorée",
           "remaining_stops": [
-            "Gare de Joinville-le-Pont",
-            "Carrefour de la Résistance",
-            "Verdun",
-            "Dagoty",
-            "Charles Floquet - Diderot",
-            "Verdun - Charles Floquet",
-            "Jacques Decour",
-            "Bel Air",
-            "Diane",
-            "Verdun - La Plage",
-            "Champigny - Diderot - La Plage"
+            "Mortemart",
+            "Plaine de la Faluère",
+            "Stade Léo Lagrange",
+            "Pyramide - Parc Floral",
+            "Tourelle - Daumesnil",
+            "Demi Lune - Parc Zoologique",
+            "Alphand",
+            "Parc Zoologique",
+            "Porte Dorée"
           ]
         },
         {
           "time": "11:10",
-          "destination": "Porte Dorée",
+          "destination": "Champigny - Diderot - La Plage",
           "remaining_stops": [
-            "Mortemart",
-            "Plaine de la Faluère",
-            "Stade Léo Lagrange",
-            "Pyramide - Parc Floral",
-            "Tourelle - Daumesnil",
-            "Demi Lune - Parc Zoologique",
-            "Alphand",
-            "Parc Zoologique",
-            "Porte Dorée"
-          ]
-        },
-        {
-          "time": "11:31",
-          "destination": "Porte Dorée",
-          "remaining_stops": [
-            "Mortemart",
-            "Plaine de la Faluère",
-            "Stade Léo Lagrange",
-            "Pyramide - Parc Floral",
-            "Tourelle - Daumesnil",
-            "Demi Lune - Parc Zoologique",
-            "Alphand",
-            "Parc Zoologique",
-            "Porte Dorée"
+            "Gare de Joinville-le-Pont",
+            "Carrefour de la Résistance",
+            "Verdun",
+            "Dagoty",
+            "Charles Floquet - Diderot",
+            "Verdun - Charles Floquet",
+            "Jacques Decour",
+            "Bel Air",
+            "Diane",
+            "Verdun - La Plage",
+            "Champigny - Diderot - La Plage"
           ]
         },
         {
@@ -11847,20 +11832,18 @@
           ]
         },
         {
-          "time": "11:52",
-          "destination": "Champigny - Diderot - La Plage",
+          "time": "11:31",
+          "destination": "Porte Dorée",
           "remaining_stops": [
-            "Gare de Joinville-le-Pont",
-            "Carrefour de la Résistance",
-            "Verdun",
-            "Dagoty",
-            "Charles Floquet - Diderot",
-            "Verdun - Charles Floquet",
-            "Jacques Decour",
-            "Bel Air",
-            "Diane",
-            "Verdun - La Plage",
-            "Champigny - Diderot - La Plage"
+            "Mortemart",
+            "Plaine de la Faluère",
+            "Stade Léo Lagrange",
+            "Pyramide - Parc Floral",
+            "Tourelle - Daumesnil",
+            "Demi Lune - Parc Zoologique",
+            "Alphand",
+            "Parc Zoologique",
+            "Porte Dorée"
           ]
         },
         {
@@ -11879,7 +11862,7 @@
           ]
         },
         {
-          "time": "12:13",
+          "time": "11:52",
           "destination": "Champigny - Diderot - La Plage",
           "remaining_stops": [
             "Gare de Joinville-le-Pont",
@@ -11908,6 +11891,23 @@
             "Alphand",
             "Parc Zoologique",
             "Porte Dorée"
+          ]
+        },
+        {
+          "time": "12:13",
+          "destination": "Champigny - Diderot - La Plage",
+          "remaining_stops": [
+            "Gare de Joinville-le-Pont",
+            "Carrefour de la Résistance",
+            "Verdun",
+            "Dagoty",
+            "Charles Floquet - Diderot",
+            "Verdun - Charles Floquet",
+            "Jacques Decour",
+            "Bel Air",
+            "Diane",
+            "Verdun - La Plage",
+            "Champigny - Diderot - La Plage"
           ]
         },
         {
@@ -11944,34 +11944,34 @@
         },
         {
           "time": "12:55",
-          "destination": "Champigny - Diderot - La Plage",
+          "destination": "Porte Dorée",
           "remaining_stops": [
-            "Gare de Joinville-le-Pont",
-            "Carrefour de la Résistance",
-            "Verdun",
-            "Dagoty",
-            "Charles Floquet - Diderot",
-            "Verdun - Charles Floquet",
-            "Jacques Decour",
-            "Bel Air",
-            "Diane",
-            "Verdun - La Plage",
-            "Champigny - Diderot - La Plage"
+            "Mortemart",
+            "Plaine de la Faluère",
+            "Stade Léo Lagrange",
+            "Pyramide - Parc Floral",
+            "Tourelle - Daumesnil",
+            "Demi Lune - Parc Zoologique",
+            "Alphand",
+            "Parc Zoologique",
+            "Porte Dorée"
           ]
         },
         {
           "time": "12:55",
-          "destination": "Porte Dorée",
+          "destination": "Champigny - Diderot - La Plage",
           "remaining_stops": [
-            "Mortemart",
-            "Plaine de la Faluère",
-            "Stade Léo Lagrange",
-            "Pyramide - Parc Floral",
-            "Tourelle - Daumesnil",
-            "Demi Lune - Parc Zoologique",
-            "Alphand",
-            "Parc Zoologique",
-            "Porte Dorée"
+            "Gare de Joinville-le-Pont",
+            "Carrefour de la Résistance",
+            "Verdun",
+            "Dagoty",
+            "Charles Floquet - Diderot",
+            "Verdun - Charles Floquet",
+            "Jacques Decour",
+            "Bel Air",
+            "Diane",
+            "Verdun - La Plage",
+            "Champigny - Diderot - La Plage"
           ]
         },
         {
@@ -12008,6 +12008,21 @@
         },
         {
           "time": "13:37",
+          "destination": "Porte Dorée",
+          "remaining_stops": [
+            "Mortemart",
+            "Plaine de la Faluère",
+            "Stade Léo Lagrange",
+            "Pyramide - Parc Floral",
+            "Tourelle - Daumesnil",
+            "Demi Lune - Parc Zoologique",
+            "Alphand",
+            "Parc Zoologique",
+            "Porte Dorée"
+          ]
+        },
+        {
+          "time": "13:37",
           "destination": "Champigny - Diderot - La Plage",
           "remaining_stops": [
             "Gare de Joinville-le-Pont",
@@ -12021,21 +12036,6 @@
             "Diane",
             "Verdun - La Plage",
             "Champigny - Diderot - La Plage"
-          ]
-        },
-        {
-          "time": "13:37",
-          "destination": "Porte Dorée",
-          "remaining_stops": [
-            "Mortemart",
-            "Plaine de la Faluère",
-            "Stade Léo Lagrange",
-            "Pyramide - Parc Floral",
-            "Tourelle - Daumesnil",
-            "Demi Lune - Parc Zoologique",
-            "Alphand",
-            "Parc Zoologique",
-            "Porte Dorée"
           ]
         },
         {
@@ -12906,21 +12906,6 @@
         },
         {
           "time": "20:16",
-          "destination": "Porte Dorée",
-          "remaining_stops": [
-            "Mortemart",
-            "Plaine de la Faluère",
-            "Stade Léo Lagrange",
-            "Pyramide - Parc Floral",
-            "Tourelle - Daumesnil",
-            "Demi Lune - Parc Zoologique",
-            "Alphand",
-            "Parc Zoologique",
-            "Porte Dorée"
-          ]
-        },
-        {
-          "time": "20:16",
           "destination": "Champigny - Diderot - La Plage",
           "remaining_stops": [
             "Gare de Joinville-le-Pont",
@@ -12934,6 +12919,21 @@
             "Diane",
             "Verdun - La Plage",
             "Champigny - Diderot - La Plage"
+          ]
+        },
+        {
+          "time": "20:16",
+          "destination": "Porte Dorée",
+          "remaining_stops": [
+            "Mortemart",
+            "Plaine de la Faluère",
+            "Stade Léo Lagrange",
+            "Pyramide - Parc Floral",
+            "Tourelle - Daumesnil",
+            "Demi Lune - Parc Zoologique",
+            "Alphand",
+            "Parc Zoologique",
+            "Porte Dorée"
           ]
         },
         {
@@ -13882,13 +13882,6 @@
         },
         {
           "time": "11:12",
-          "destination": "Joinville-le-Pont - RER",
-          "remaining_stops": [
-            "Gare de Joinville-le-Pont"
-          ]
-        },
-        {
-          "time": "11:12",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Hippodrome de Vincennes",
@@ -13908,6 +13901,13 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances",
             "Gare de Lyon"
+          ]
+        },
+        {
+          "time": "11:12",
+          "destination": "Joinville-le-Pont - RER",
+          "remaining_stops": [
+            "Gare de Joinville-le-Pont"
           ]
         },
         {
@@ -14512,13 +14512,6 @@
         },
         {
           "time": "17:20",
-          "destination": "Joinville-le-Pont - RER",
-          "remaining_stops": [
-            "Gare de Joinville-le-Pont"
-          ]
-        },
-        {
-          "time": "17:20",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Hippodrome de Vincennes",
@@ -14538,6 +14531,13 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances",
             "Gare de Lyon"
+          ]
+        },
+        {
+          "time": "17:20",
+          "destination": "Joinville-le-Pont - RER",
+          "remaining_stops": [
+            "Gare de Joinville-le-Pont"
           ]
         },
         {
@@ -14819,6 +14819,13 @@
         },
         {
           "time": "20:33",
+          "destination": "Joinville-le-Pont - RER",
+          "remaining_stops": [
+            "Gare de Joinville-le-Pont"
+          ]
+        },
+        {
+          "time": "20:33",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Hippodrome de Vincennes",
@@ -14838,13 +14845,6 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances",
             "Gare de Lyon"
-          ]
-        },
-        {
-          "time": "20:33",
-          "destination": "Joinville-le-Pont - RER",
-          "remaining_stops": [
-            "Gare de Joinville-le-Pont"
           ]
         },
         {
@@ -15774,13 +15774,6 @@
         },
         {
           "time": "11:12",
-          "destination": "Joinville-le-Pont - RER",
-          "remaining_stops": [
-            "Gare de Joinville-le-Pont"
-          ]
-        },
-        {
-          "time": "11:12",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Hippodrome de Vincennes",
@@ -15800,6 +15793,13 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances",
             "Gare de Lyon"
+          ]
+        },
+        {
+          "time": "11:12",
+          "destination": "Joinville-le-Pont - RER",
+          "remaining_stops": [
+            "Gare de Joinville-le-Pont"
           ]
         },
         {
@@ -16404,13 +16404,6 @@
         },
         {
           "time": "17:20",
-          "destination": "Joinville-le-Pont - RER",
-          "remaining_stops": [
-            "Gare de Joinville-le-Pont"
-          ]
-        },
-        {
-          "time": "17:20",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Hippodrome de Vincennes",
@@ -16430,6 +16423,13 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances",
             "Gare de Lyon"
+          ]
+        },
+        {
+          "time": "17:20",
+          "destination": "Joinville-le-Pont - RER",
+          "remaining_stops": [
+            "Gare de Joinville-le-Pont"
           ]
         },
         {
@@ -16711,6 +16711,13 @@
         },
         {
           "time": "20:33",
+          "destination": "Joinville-le-Pont - RER",
+          "remaining_stops": [
+            "Gare de Joinville-le-Pont"
+          ]
+        },
+        {
+          "time": "20:33",
           "destination": "Gare de Lyon",
           "remaining_stops": [
             "Hippodrome de Vincennes",
@@ -16730,13 +16737,6 @@
             "Gare de Bercy",
             "Ministère de l'Economie et des Finances",
             "Gare de Lyon"
-          ]
-        },
-        {
-          "time": "20:33",
-          "destination": "Joinville-le-Pont - RER",
-          "remaining_stops": [
-            "Gare de Joinville-le-Pont"
           ]
         },
         {
